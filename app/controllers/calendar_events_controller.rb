@@ -6,7 +6,7 @@ class CalendarEventsController < ApplicationController
   end
 
   def create 
-    @calendar_event = CalenderEvent.new(
+    @calendar_event = CalendarEvent.new(
                                         name: params[:name],
                                         event_date: params[:event_date],
                                         event_time: params[:event_time],

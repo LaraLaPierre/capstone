@@ -2,6 +2,18 @@ class CalendarEventsController < ApplicationController
   
   def index 
     @calendar_events = CalendarEvent.all
+    
+
+    search_term = params[:name]
+    if search_term
+      @calendar_events = @calendar_events.where("name iLike ?", "%#{search_term}%")
+    end 
+
+    search_date = params[:date]
+    if search_date
+      @calendar_events = @calendar_events.where("event_date = ?", search_date)
+    end 
+
     render 'index.json.jbuilder'
   end
 
@@ -11,7 +23,9 @@ class CalendarEventsController < ApplicationController
                                         event_date: params[:event_date],
                                         event_time: params[:event_time],
                                         location: params[:location],
-                                        home: params[:home]
+                                        home: params[:home],
+                                        user_id: current_user.id
+                                        category_id: params[:category_id]
                                         )
       
       if @calendar_event.save

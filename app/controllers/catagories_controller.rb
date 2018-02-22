@@ -3,4 +3,6 @@ class CatagoriesController < ApplicationController
     @catagories = Catagories.all 
     render 'index.json.jbuilder'
   end 
+
+
 end

@@ -14,6 +14,8 @@
 
 # CalendarEvent.create!(name: "Date Night", event_date: Date.new(2018,9,20), event_time: Time.parse("20:00"), location: "Home", home: true)
 
-Category.create!(name: "")
-Category.create!(name: "")
-Category.create!(name: "")
+# Category.create!(name: "relaxing")[1]
+# Category.create!(name: "learning")[2]
+# Category.create!(name: "entertaining")[3]
+
+# calendar_event.update!(category_id: 2)

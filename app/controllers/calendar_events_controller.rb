@@ -14,6 +14,11 @@ class CalendarEventsController < ApplicationController
       @calendar_events = @calendar_events.where("event_date = ?", search_date)
     end 
 
+    search_location = params[:location]
+    if search_location
+      @calendar_events = @calendar_events.where("location = ?", search_location)
+    end 
+
     render 'index.json.jbuilder'
   end
 
@@ -25,7 +30,8 @@ class CalendarEventsController < ApplicationController
                                         location: params[:location],
                                         home: params[:home],
                                         user_id: current_user.id,
-                                        category_id: params[:category_id]
+                                        category_id: params[:category_id],
+                                        # user_location: current_user.location
                                         )
       
       if @calendar_event.save

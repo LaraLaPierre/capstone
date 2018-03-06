@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   post "/users" => "users#create"
   post '/user_token' => 'user_token#create'
 
+  get '/wink/authorize' => 'calendar_events#authorize'
+
 end

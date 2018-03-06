@@ -1,8 +1,9 @@
 json.id calendar_event.id
 json.name calendar_event.name
-json.date calendar_event.event_date
-json.time calendar_event.event_time
+json.event_date calendar_event.event_date
+json.event_time calendar_event.event_time
 json.location calendar_event.location
-json.category_id calendar_event.category_id
 json.user_name calendar_event.user.name
 json.user_location calendar_event.user.location
+json.pretty_event_time calendar_event.pretty_event_time
+json.pretty_event_date calendar_event.pretty_event_date

@@ -1,5 +1,13 @@
 class CalendarEventsController < ApplicationController
+  def authorize
+    render json: {
+                  message: "visit this url",
+                  url: "https://api.wink.com/oauth2/authorize?client_id=#{ENV['WINK_CLIENT_ID']}&redirect_uri=http://localhost:3000/wink/callback"
+                  }
+  end 
   
+
+
   def index 
     @calendar_events = CalendarEvent.all
     

@@ -21,6 +21,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'knock'
 gem 'figaro'
 
+gem 'unirest'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

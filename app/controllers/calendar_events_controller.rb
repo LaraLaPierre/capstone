@@ -51,6 +51,7 @@ class CalendarEventsController < ApplicationController
 
   def show
     @calendar_event = CalendarEvent.find(params[:id])
+
     render 'show.json.jbuilder'
   end
 

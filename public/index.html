@@ -1,47 +1,191 @@
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Calendar App</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="calendar_events.css"> -->
+    <title>Snap shot</title>
+    <meta charset="utf-8">
+    <meta name="description" content="1E-shop - Bootstrap Theme from angelostudio.net">
+    <meta name="author" content="ANGELOSTUDIO.NET">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/style-turquoise.css">
+	<link rel="shortcut icon" href="fa fa-strikethrough" type="image/png">
+	<link rel="apple-touch-icon" href="img/ico/60.png" type="image/png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/ico/72.png" type="image/png">
+	<link rel="apple-touch-icon" sizes="120x120" href="img/ico/120.png" type="image/png">
+	<link rel="apple-touch-icon" sizes="152x152" href="img/ico/152.png" type="image/png">
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.js"></script>
   <script src="index.js" defer></script>
 </head>
-<body> 
-  <div id="vue-app">
-    <div>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">SnapShot</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/#/signup">Sign Up</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/#/login">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="/#/logout">Logout</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+<div>
+  <body id="home">
+    <div id="vue-app">
+    	<a id="menu-link" href="#" class="">
+    		<span class="menu-icon"></span>
+    	</a>
+
+            <!-- ======== BEGIN NAV BAR ============ -->
+        <div class="overlay" id="overlay">
+              <nav class="overlay-menu">
+                <ul>
+                  <li><a href="/#/" class="smooth-scroll">Home</a></li>
+                  <li><a href="/#/calendar_events/new" class="smooth-scroll">SignUp</a></li>
+                  <li><a href="/#/login" class="smooth-scroll">Login</a></li>
+                  <li><a href="/#/logout" class="smooth-scroll">Logout</a></li>
+                </ul>
+              </nav>
+        </div>
+         <!-- ======== END NAV BAR ============ -->
+
+
+      <!-- ======== BEGIN TURQUOISE SECTION ============ -->
+       <section id="hero" class="m-center text-center bg-shop">
+        <div class="center-box">
+          
+            <div class="hero-unit ">
+              <div class="container ">
+              <h1 class="title"><b>snap</b>SHOT</h1>
+              <h3><b>Your day - at a glance.</b></h3> 
+              
+              <a class="btn white" data-toggle="modal" data-target="#signup-modal"><b>Sign Up</b></a>
+              </div>
+            </div>
+            <div class="col-sm-12 img-hero"></div>
+          
+          <a href="#start" class="hero-start-link smooth-scroll anchor-link"><i class="fa fa-angle-double-down"></i></a>
+        </div>
+      </section>
+      <!-- ======== END TURQUOISE SECTION ============ -->
+
+<div>
+  
+        <router-view></router-view>
 </div>
 
-    <router-view></router-view>
 
-  </div>
+       <!-- ======== BEGIN PARALLAX SECTION ============ -->
+          <section class="parallax-container white-text">
+            <div class="dark-overlay"></div>
+            <div class="parallax"><img src="img/sunset.jpg" alt="About the creator"></div>
+                <div class="container">
+                    <div class="row">
+                      <div class="col-md-8 mx-auto text-center"  style="height:500px;">
+                        <div class="center-vertical">
+                                  <div class="center-vertical-box">
+                                      <h2>snapShot</h2>
+                                      <p>Your day, at a glance.</p><br>
+                                      <!-- <a class="btn" href="#" data-toggle="modal" data-target="#product-modal"><b>$5</b> Buy now</a> -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                 </div>
+          </section>
+          <!-- ======== END PARALLAX SECTION ============ -->
+
+
+          
+      
+
+
+        <!-- ======== BEGIN FOOTER ============ -->
+            <div class="footer-1 text-center">
+                <div class="container-fluid">
+                    <a href="#home" class="back-to-top smooth-scroll"><i class="fa fa-chevron-up"></i></a>
+                    <p>Made with <i class="fa fa-heart color-text"></i> by Lara</a>.</p>
+                	<ul class="social-links-2 ">
+    					       <li><a href="https://twitter.com/landoflars"><i class="fa fa-twitter"></i></a></li>
+    				         <li><a href="https://medium.com/@larastheme"><i class="fa fa-medium"></i></a></li>
+    					       <li><a href="www.linkedin.com/in/laralapierre401"><i class="fa fa-linkedin"></i></a></li>
+    				      </ul>
+                </div>
+            </div>
+        <!-- ======== END FOOTER ============ -->
+
+
+    </div>
+        
+
+
+   
+        <!-- Core scrips -->
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+      <script type="text/javascript" src="js/core.js"></script>
+      <script type="text/javascript" src="js/menu-overlay.js"></script>
+      <script type="text/javascript" src="js/placeholders.min.js"></script>
+      <!-- end core scripts --> 
+      <!-- sliders -->
+      <script type="text/javascript" src="js/owl.carousel.min.js"></script>   	
+     	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.waitforimages/2.4.0/jquery.waitforimages.min.js"></script> 
+     	<script type="text/javascript" src="js/sliders.js"></script>
+    	<script type="text/javascript" src="js/jquery.counterup.min.js"></script>
+    	<script type="text/javascript" src="js/numbers.js"></script>
+    	<script type="text/javascript" src="js/contact.js"></script>
+    	<script type="text/javascript" src="js/parallax.js"></script>
+
+</div>
 </body>
+
 </html>
+
+<template id="calendar_events-index-page">
+  <div class="vue-component">
+    <div class="container">
+      <div class="row">
+        <div v-for="calendar_event in calendar_events" class="col-md-4">
+          <div class="card mb-5">
+            <div class="card-body">
+              <h2 class="card-name">{{ calendar_event.name }}</h2>
+              <p class="card-text"> {{ calendar_event.pretty_event_date }}</p>
+              <p class="card-text"> {{ calendar_event.pretty_event_time }}</p>
+              <p class="card-text">Where: {{ calendar_event.location }}</p>
+              <p class="card-text">Home? {{ calendar_event.home }}</p>
+              <a v-bind:href="'/#/calendar_events/' + calendar_event.id" class="btn btn-primary float-right">More Info</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template id="calendar_events-new-page">
+  <div class="vue-component">
+    <div class="container">
+      <h1>Add an Event</h1>
+      <ul>
+        <li class="text-danger" v-for="error in errors">{{ error }}</li>
+      </ul>
+      <div class="form-group">
+        <label>Name:</label> 
+        <input type="text" class="form-control" v-model="name">
+      </div>
+      <div class="form-group">
+        <label>Date:</label>
+        <input type="text" class="form-control" v-model="eventDate">
+      </div>
+      <div class="form-group">
+        <label>Time</label>
+        <input type="text" class="form-control" v-model="eventTime">
+      </div>
+      <div class="form-group">
+        <label>Location:</label>
+        <input type="integer" class="form-control" v-model="location">
+      </div>
+      <div class="form-group">
+        <label>Is this event at Home? T/F:</label>
+        <input type="integer" class="form-control" v-model="home">
+      </div>
+      <button class="btn btn-primary" v-on:click="submit()">Submit</button>
+    </div>
+  </div>
+</template>
 
 <template id="calendar_event-show-page">
   <div class="vue-component">
@@ -50,27 +194,40 @@
       <h3>{{ calendar_event.pretty_event_date }}</h3>
       <h3>{{ calendar_event.pretty_event_time }}</h3>
       <h3>{{ calendar_event.location }}</h3>
+      <h3>{{ calendar_event.forecast }}</h3>
       <a class="btn btn-warning" v-bind:href="'/#/calendar_events/' + calendar_event.id + '/edit'">Edit</a>
       <a class="btn btn-warning" v-bind:href="'/#/calendar_events/' + calendar_event.id + '/delete'">Delete</a>
     </div>
   </div>
 </template>
 
-<template id="login-page">
+<template id="calendar_events-edit-page">
   <div class="vue-component">
 
     <div class="container">
-      <h1>Login</h1>
+      <h1>Edit an Event</h1>
       <ul>
         <li class="text-danger" v-for="error in errors">{{ error }}</li>
       </ul>
       <div class="form-group">
-        <label>Email:</label>
-        <input type="email" class="form-control" v-model="email">
+        <label>Name:</label> 
+        <input type="text" class="form-control" v-model="name">
       </div>
       <div class="form-group">
-        <label>Password:</label>
-        <input type="password" class="form-control" v-model="password">
+        <label>Date:</label>
+        <input type="text" class="form-control" v-model="event_date">
+      </div>
+      <div class="form-group">
+        <label>Time:</label>
+        <input type="text" class="form-control" v-model="event_time">
+      </div>
+      <div class="form-group">
+        <label>Location:</label>
+        <input type="text" class="form-control" v-model="location">
+      </div>
+      <div class="form-group">
+        <label>Home Event?</label>
+        <input type="text" class="form-control" v-model="home ">
       </div>
       <button class="btn btn-primary" v-on:click="submit()">Submit</button>
     </div>
@@ -108,30 +265,24 @@
   </div>
 </template>
 
-<template id="home-page">
+<template id="login-page">
   <div class="vue-component">
 
-    <h1>{{ message }}</h1>
-
-  </div>
-</template>
-
-<template id="calendar_events-index-page">
-  <div class="vue-component">
     <div class="container">
-      <div class="row">
-        <div v-for="calendar_event in calendar_events" class="col-md-4">
-          <div class="card mb-5">
-            <div class="card-body">
-              <h2 class="card-name">{{ calendar_event.name }}</h2>
-              <p class="card-text"> {{ calendar_event.pretty_event_date }}</p>
-              <p class="card-text"> {{ calendar_event.pretty_event_time }}</p>
-              <p class="card-text">Where: {{ calendar_event.location }}</p>
-              <a v-bind:href="'/#/calendar_events/' + calendar_event.id" class="btn btn-primary float-right">More Info</a>
-            </div>
-          </div>
-        </div>
+      <h1>Login</h1>
+      <ul>
+        <li class="text-danger" v-for="error in errors">{{ error }}</li>
+      </ul>
+      <div class="form-group">
+        <label>Email:</label>
+        <input type="email" class="form-control" v-model="email">
       </div>
+      <div class="form-group">
+        <label>Password:</label>
+        <input type="password" class="form-control" v-model="password">
+      </div>
+      <button class="btn btn-primary" v-on:click="submit()">Submit</button>
     </div>
+
   </div>
 </template>

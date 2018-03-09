@@ -1,16 +1,3 @@
-
-var HomePage = {
-  template: "#home-page",
-  data: function() {
-    return {
-      message: "hello world"
-    };
-  },
-  created: function() {},
-  methods: {},
-  computed: {}
-};
-
 var CalendarEventsIndexPage = {
   template: "#calendar_events-index-page",
   data: function() {
@@ -28,6 +15,46 @@ var CalendarEventsIndexPage = {
   computed: {}
 };
 
+var CalendarEventsNewPage = {
+  template: "#calendar_events-new-page",
+  data: function() {
+    return {
+      name: "",
+      eventTime: "",
+      eventDate: "",
+      location: "",
+      home: "",
+      category: "",
+      errors: []
+    };
+  },
+  methods: {
+    submit: function() {
+      var params = {
+        name: this.name,
+        event_date: this.eventDate,
+        event_time: this.eventTime,
+        location: this.location,
+        home: this.home,
+        forecast: this.forecast,
+        category: this.category
+
+      };
+      axios
+        .post("/calendar_events", params)
+        .then(function(response) {
+          router.push("/");
+        })
+        .catch(
+          function(error) {
+            this.errors = error.response.data.errors;
+            router.push("/login");
+          }.bind(this)
+        );
+    }
+  }
+};
+
 var CalendarEventsShowPage = {
   template: "#calendar_event-show-page",
   data: function() {
@@ -37,7 +64,9 @@ var CalendarEventsShowPage = {
           name: "",
           pretty_event_date: "",
           pretty_event_time: "",
-          location: ""
+          location: "",
+          home: "",
+          category: ""
         }
     };
   },
@@ -49,6 +78,58 @@ var CalendarEventsShowPage = {
   },
   methods: {},
   computed: {}
+};
+
+var ProductsEditPage = {
+  template: "#calendar_events-edit-page",
+  data: function() {
+    return {
+      name: "",
+      date: "",
+      time: "",
+      location: "",
+      home: "",
+      category: "",
+      errors: []
+    };
+  },
+  created: function() {
+    axios
+      .get("/calendar_events/" + this.$route.params.id)
+      .then(function(response) {
+        console.log(response.data);
+        var calendar_event = response.data;
+        this.name = calendar_event.name
+        this.date = calendar_event.event_date
+        this.time = calendar_event.event_time
+        this.location = calendar_event.location
+        this.home = calendar_event.home
+        this.category = calendar_event.category
+      }.bind(this));
+  },
+  methods: {
+    submit: function() {
+      var params = {
+        name: this.name,
+        event_date: this.date,
+        event_time: this.time,
+        location: this.location,
+        home: this.home,
+        category: this.category
+      };
+      axios
+        .patch("/calendar_events/" + this.$route.params.id, params)
+        .then(function(response) {
+          router.push("/calendar_events/" + response.data.id);
+        }.bind(this))
+        .catch(
+          function(error) {
+            this.errors = error.response.data.errors;
+            router.push("/login");
+          }.bind(this)
+        );
+    }
+  }
 };
 
 var SignupPage = {
@@ -128,8 +209,9 @@ var LogoutPage = {
 
 var router = new VueRouter({
   routes: [
-        { path: "/calendar_events", component: CalendarEventsIndexPage },
         { path: "/", component: CalendarEventsIndexPage },
+        { path: "/calendar_events", component: CalendarEventsIndexPage },
+        { path: "/calendar_events/new", component: CalendarEventsNewPage},
         { path: "/calendar_events/:id", component: CalendarEventsShowPage },
         { path: "/signup", component: SignupPage },
         { path: "/login", component: LoginPage },

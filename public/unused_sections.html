@@ -1,0 +1,186 @@
+      <div id="wrap">
+        
+
+            
+
+        <!-- ======== BEGIN FEATURES SECTION ============ -->
+        <section id="features" class="features-1">
+          <div class="container padding-top-bottom">
+            <div class="row header">
+              <div class="col-md-12">
+                <h2>Features</h2>
+                <p>We are here for you</p>
+              </div>
+            </div>
+            <div class="container" >
+              <div class="row">
+                      <div class="col-md-4 anima scale-in ">
+                          <article class="text-center">
+                            <img src="img/demo1.jpg" alt="#" class="zoom-img img-fluid center-block">
+                              <h3>​ORGANISED LAYERS</h3>
+                              <p>Nodal point courier towards decay dome advert wonton soup chrome voodoo.</p>
+                          </article>
+                      </div>                       
+                <div class="col-md-4 anima scale-in d1">
+                          <article class="text-center"> 
+                    <img src="img/demo2.jpg" alt="#" class="zoom-img img-fluid center-block">
+                              <h3>​SMART OBJECT</h3>
+                              <p>Table plastic concrete silent nano-dome industrial grade. Hotdog marketing.</p>
+                          </article>
+                      </div>             
+                <div class="col-md-4 anima scale-in d2">
+                          <article class="text-center"> 
+                    <img src="img/demo3.jpg" alt="#" class="zoom-img img-fluid center-block">
+                              <h3>TRANSPARENT BG</h3>
+                              <p>Grenade wonton soup faded disposable dome cardboard spook refrigerator dolphin.</p>
+                          </article>
+                      </div>             
+                    </div>             
+                </div>
+          </div>  
+        </section>
+        <!-- ======== END FEATURES SECTION ============ -->
+
+
+
+        <!-- ======== BEGIN FORM SECTION ============ -->
+        <section id="contact" class=" padding-top-bottom">
+          <div class="container">
+            <div class="row header">
+              <div class="col-md-12">
+                <h2>Sign up for snapShot</h2>
+              </div>
+            </div>
+            <div class="row">
+
+              <div class="col-lg-8 mx-auto ">
+                <div id="alert-contact"> 
+                  <div class="alert alert-success" role="alert"><strong>Your message has been sent.</strong></div>
+                </div>
+                <form id="contact-form" action="sendemail.php" class="myform" method="post" novalidate>
+                  <div class="row clearfix">
+                    <div class=" col-md-6">
+                      <div class="form-group">
+                        <div class="controls">
+                          <input name="contactName" placeholder="Your name" class="form-control input-lg requiredField" type="text" data-error-empty="Enter name">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <div class=" controls">
+                          <input name="email" placeholder="Your email" class="form-control input-lg requiredField" type="email" data-error-invalid="Invalid email address" data-error-empty="Enter email">
+                        </div>
+                      </div>
+                    </div>  
+                  </div>  
+                  <div class="form-group">
+                    <div class="controls">
+                      <textarea name="comments" placeholder="Your message" class="form-control input-lg requiredField" rows="5" data-error-empty="Enter message"></textarea>
+                    </div>
+                  </div>
+                  <p><button name="submit" type="submit" class="btn btn-store btn-block" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Email Sent">Send Message</button></p>
+                  <input type="hidden" name="submitted" id="submitted3" value="true">
+                </form> 
+              </div>    
+            </div>
+          </div>
+        </section>  
+        <!-- ======== END FORM SECTION ============ -->
+      </div>
+
+
+      
+    <!--    <div class="modal fade text-modal" id="text-modal" tabindex="-1" role="dialog"  aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-shop">
+                        <a class="close-modal" href="#" data-dismiss="modal">
+                            <span class="menu-icon"></span>
+                        </a>
+                        <h2 class=""><b>License</b></h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>In order to simplify the legal terms, here are the rules of the game written in plain English, that you are obliged to follow when using the digital goods at 1E-shop.</p>
+                        <p>
+                            <br><strong>You are free to…</strong>
+                        </p>
+                        <ul>
+                            <li>Use the digital goods in a website for yourself or a client for personal, open-source or commercial use.</li>
+                            <li>Use the digital goods to create an icon for your app or button icons.</li>
+                            <li>Use the digital goods to create a logo or other brand material.</li>
+                        </ul>
+                        <p>
+                            <br><strong>You are forbidden to…</strong>
+                        </p>
+                        <ul>
+                            <li>Re-sell the digital goods, host the digital goods or rent the digital goods (either in existing or modiﬁed form).</li>
+                            <li>Include the digital goods with a website offered for sale or distributed for free.</li>
+                            <li>Convert the digital goods to a theme to sell or distribute for free.</li>
+                        </ul>
+                        <br>
+                        <p>While attribution is optional, it is always appreciated. Intellectual property rights are not transferred with the download of the icons.</p>
+                        <p>Should you happen to lost the purchased good, let me know the email you've used upon your purchase, and I will provide you with the new files.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+ -->
+        <!-- <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <a class="close-modal" href="#" data-dismiss="modal">
+                            <span class="menu-icon"></span>
+                        </a>
+                        <img src="img/cup1.jpg" alt="" class="img-fluid">
+                    </div>
+                    <div class="modal-body">
+                      <h1>Signup</h1>
+                      <ul>
+                        <li class="text-danger" v-for="error in errors">{{ error }}</li>
+                      </ul>
+                      <div class="form-group">
+                        <label>Name:</label> 
+                        <input type="text" class="form-control" v-model="name">
+                      </div>
+                      <div class="form-group">
+                        <label>Email:</label>
+                        <input type="email" class="form-control" v-model="email">
+                      </div>
+                      <div class="form-group">
+                        <label>Password:</label>
+                        <input type="password" class="form-control" v-model="password">
+                      </div>
+                      <div class="form-group">
+                        <label>Password confirmation:</label>
+                        <input type="password" class="form-control" v-model="passwordConfirmation">
+                      </div>
+                      <button class="btn btn-primary" v-on:click="signUpSubmit()">Submit</button>
+                        <h3 class="text-center"><b>PaperCup - Mockup </b>($5,00)</h3>
+                    </div>
+                    <div class="modal-footer">
+                      <div class="container">
+                          <form id="buy" action="buy" class="myform" method="post" novalidate>
+                              <div class="form-group">
+                                  <div class=" controls">
+                                      <input name="email" placeholder="PayPal Email" class="form-control input-lg requiredField" type="email" data-error-invalid="Invalid email address" data-error-empty="Enter email">
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <div class="controls">
+                                      <input id="password" class="form-control" type="password" placeholder="PayPal Password" name="password">
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <button type="button" class="btn btn-block">PAY NOW</button>
+                              </div>
+                              <p class="text-center"><a href="" data-dismiss="modal">Cancel</a>
+                              </p>
+                          </form>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->

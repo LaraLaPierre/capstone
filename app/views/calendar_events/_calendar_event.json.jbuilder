@@ -8,3 +8,4 @@ json.user_location calendar_event.user.location
 json.pretty_event_time calendar_event.pretty_event_time
 json.pretty_event_date calendar_event.pretty_event_date
 json.forecast calendar_event.forecast
+json.category calendar_event.category

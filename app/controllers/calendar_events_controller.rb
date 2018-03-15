@@ -17,7 +17,7 @@ class CalendarEventsController < ApplicationController
   def tokens
     response = Unirest.post("https://api.wink.com/oauth2/token", 
                             headers: {'Content-Type' => 'application/json'},
-                            parameters: {"client_secret": "N-JRKD93fH4Cheg6kYUGbPIlIF7tj8B-",
+                            parameters: {"client_secret": ENV['WINK_CLIENT_SECRET'],
                                          "grant_type": "authorization_code",
                                          "code": params[:code]
                                         }
@@ -85,7 +85,6 @@ class CalendarEventsController < ApplicationController
 
     search_term = params[:name]
     if search_term
-      @calendar_events = @calendar_events.where("name iLike ?", "%#{search_term}%")
     end 
 
     search_date = params[:date]
@@ -99,7 +98,8 @@ class CalendarEventsController < ApplicationController
     end 
 
     search_month = params[:month]
-    if search_monthp
+    
+    if search_month
      @calendar_events = @calendar_events.where('extract(month from event_date) = ? AND extract(year from event_date) = ?', search_month, 2018)
     end 
 

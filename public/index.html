@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Snap shot</title>
+    <title>Dayly</title>
     <meta charset="utf-8">
     <meta name="description" content="1E-shop - Bootstrap Theme from angelostudio.net">
     <meta name="author" content="ANGELOSTUDIO.NET">
@@ -18,7 +18,7 @@
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.js"></script>
-  <script src="index.js" defer></script>
+  <script src="src/index.js" defer></script>
 </head>
 <div>
   <body id="home">
@@ -31,39 +31,19 @@
         <div class="overlay" id="overlay">
               <nav class="overlay-menu">
                 <ul>
-                  <li><a href="/#/" class="smooth-scroll">Home</a></li>
-                  <li><a href="/#/calendar_events/new" class="smooth-scroll">SignUp</a></li>
-                  <li><a href="/#/login" class="smooth-scroll">Login</a></li>
-                  <li><a href="/#/logout" class="smooth-scroll">Logout</a></li>
+                  <li><a href="/#/" class="smooth-scroll">Your Calendar</a></li>
+                  <li><a href="/#/calendar_events/new" class="smooth-scroll">Weather</a></li>
+                  <li><a href="/#/login" class="smooth-scroll">News</a></li>
+                  <li><a href="/#/logout" class="smooth-scroll">Devices</a></li>
                 </ul>
               </nav>
         </div>
          <!-- ======== END NAV BAR ============ -->
+     <div>
+       
+             <router-view></router-view>
+     </div>
 
-
-      <!-- ======== BEGIN TURQUOISE SECTION ============ -->
-       <section id="hero" class="m-center text-center bg-shop">
-        <div class="center-box">
-          
-            <div class="hero-unit ">
-              <div class="container ">
-              <h1 class="title"><b>snap</b>SHOT</h1>
-              <h3><b>Your day - at a glance.</b></h3> 
-              
-              <a class="btn white" data-toggle="modal" data-target="#signup-modal"><b>Sign Up</b></a>
-              </div>
-            </div>
-            <div class="col-sm-12 img-hero"></div>
-          
-          <a href="#start" class="hero-start-link smooth-scroll anchor-link"><i class="fa fa-angle-double-down"></i></a>
-        </div>
-      </section>
-      <!-- ======== END TURQUOISE SECTION ============ -->
-
-<div>
-  
-        <router-view></router-view>
-</div>
 
 
        <!-- ======== BEGIN PARALLAX SECTION ============ -->
@@ -75,7 +55,7 @@
                       <div class="col-md-8 mx-auto text-center"  style="height:500px;">
                         <div class="center-vertical">
                                   <div class="center-vertical-box">
-                                      <h2>snapShot</h2>
+                                      <h2>Dayly</h2>
                                       <p>Your day, at a glance.</p><br>
                                       <!-- <a class="btn" href="#" data-toggle="modal" data-target="#product-modal"><b>$5</b> Buy now</a> -->
                               </div>
@@ -85,8 +65,26 @@
                       </div>
                  </div>
           </section>
-          <!-- ======== END PARALLAX SECTION ============ -->
+        <!-- ======== END PARALLAX SECTION ============ -->
 
+          <!-- ======== BEGIN TURQUOISE SECTION ============ -->
+           <section id="hero" class="m-center text-center bg-shop">
+            <div class="center-box">
+              
+                <div class="hero-unit ">
+                  <div class="container ">
+                  <h1 class="title"><b>Dayly</b></h1>
+                  <h3><b>Your day - at a glance.</b></h3> 
+                  
+                  <a class="btn white" data-toggle="modal" data-target="#signup-modal"><b>Sign Up</b></a>
+                  </div>
+                </div>
+                <div class="col-sm-12 img-hero"></div>
+              
+              <a href="#start" class="hero-start-link smooth-scroll anchor-link"><i class="fa fa-angle-double-down"></i></a>
+            </div>
+           </section>
+          <!-- ======== END TURQUOISE SECTION ============ -->
 
           
       
@@ -145,7 +143,7 @@
               <p class="card-text"> {{ calendar_event.pretty_event_date }}</p>
               <p class="card-text"> {{ calendar_event.pretty_event_time }}</p>
               <p class="card-text">Where: {{ calendar_event.location }}</p>
-              <p class="card-text">Home? {{ calendar_event.home }}</p>
+              <p class="card-text">{{ calendar_event.forecast }}</p>
               <a v-bind:href="'/#/calendar_events/' + calendar_event.id" class="btn btn-primary float-right">More Info</a>
             </div>
           </div>
@@ -176,11 +174,15 @@
       </div>
       <div class="form-group">
         <label>Location:</label>
+        <input type="text" class="form-control" v-model="location">
+      </div>
+      <div class="form-group">
+        <label>Category:</label>
         <input type="integer" class="form-control" v-model="location">
       </div>
       <div class="form-group">
         <label>Is this event at Home? T/F:</label>
-        <input type="integer" class="form-control" v-model="home">
+        <input type="boolean" class="form-control" v-model="home">
       </div>
       <button class="btn btn-primary" v-on:click="submit()">Submit</button>
     </div>
@@ -228,6 +230,10 @@
       <div class="form-group">
         <label>Home Event?</label>
         <input type="text" class="form-control" v-model="home ">
+      </div>
+      <div class="form-group">
+        <label>Category</label>
+        <input type="text" class="form-control" v-model="category">
       </div>
       <button class="btn btn-primary" v-on:click="submit()">Submit</button>
     </div>
@@ -286,3 +292,4 @@
 
   </div>
 </template>
+

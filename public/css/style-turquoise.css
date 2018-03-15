@@ -889,7 +889,7 @@ form p {
   text-decoration: none;
 }
 #hero .img-hero {
-  background-image: url('../img/sunset.jpg');
+ /* background-image: url('../img/sunset.jpg');*/
   background-repeat: no-repeat;
   background-position: center top !important;
   text-align: center;

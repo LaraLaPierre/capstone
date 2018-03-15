@@ -85,8 +85,8 @@ var CalendarEventsEditPage = {
   data: function() {
     return {
       name: "",
-      eventDate: "",
-      eventTime: "",
+      date: "",
+      time: "",
       location: "",
       home: "",
       category: "",

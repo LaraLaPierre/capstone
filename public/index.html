@@ -15,10 +15,33 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="img/ico/72.png" type="image/png">
 	<link rel="apple-touch-icon" sizes="120x120" href="img/ico/120.png" type="image/png">
 	<link rel="apple-touch-icon" sizes="152x152" href="img/ico/152.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.js"></script>
-  <script src="src/index.js" defer></script>
+  <script src="index.js" defer></script>
+  <style>
+    td {
+      font-size: 32px;
+      font-weight: bold;
+      color: black;
+      /*border: solid 2px black;*/
+      padding: 48px;
+      margin: 32px;
+    
+      border-radius: 100%;
+    }
+
+    .red {
+      background-color: #6EE3CF;
+    }
+
+    h1 {
+      font-family: 'Noto Serif', serif;
+      text-align: : right;
+
+    }
+  </style>
 </head>
 <div>
   <body id="home">
@@ -39,10 +62,7 @@
               </nav>
         </div>
          <!-- ======== END NAV BAR ============ -->
-     <div>
-       
-             <router-view></router-view>
-     </div
+     
  <!-- ======== BEGIN TURQUOISE SECTION ============ -->
            <section id="hero" class="m-center text-center bg-shop">
             <div class="center-box">
@@ -62,6 +82,10 @@
            </section>
           <!-- ======== END TURQUOISE SECTION ============ -->
 
+     <div>
+       
+             <router-view></router-view>
+     </div
 
        <!-- ======== BEGIN PARALLAX SECTION ============ -->
           <section class="parallax-container white-text">

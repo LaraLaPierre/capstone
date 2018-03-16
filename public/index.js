@@ -18,13 +18,13 @@ var CalendarEventsIndexPage = {
   template: "#calendar_events-index-page",
   data: function() {
     return {
-      calendar: [ ... ],
+      calendar: [],
       monthName: "",
       year: ""
     };
   },
   created: function() {
-    axios.get('/calendar_events?year=2019&month=4')
+    axios.get('/calendar_events?year=2018&month=3')
     .then(function(response) {
         this.calendar = response.data["calendar_days"];
         this.monthName = response.data["month_name"];

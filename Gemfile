@@ -20,7 +20,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'knock'
 gem 'figaro'
-gem 'rest-client'
+gem 'seed_dump'
 
 gem 'unirest'
 

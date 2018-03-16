@@ -1,15 +1,35 @@
+// var CalendarEventsIndexPage = {
+//   template: "#calendar_events-index-page",
+//   data: function() {
+//     return {
+//       calendar_events: []
+//     };
+//   },
+//   created: function() {
+//     axios.get("/calendar_events")
+//       .then(function(response) {
+//         this.calendar_events = response.data;
+//       }.bind(this));
+//   },
+//   methods: {},
+//   computed: {}
+// };
 var CalendarEventsIndexPage = {
   template: "#calendar_events-index-page",
   data: function() {
     return {
-      calendar_events: []
+      calendar: [ ... ],
+      monthName: "",
+      year: ""
     };
   },
   created: function() {
-    axios.get("/calendar_events")
-      .then(function(response) {
-        this.calendar_events = response.data;
-      }.bind(this));
+    axios.get('/calendar_events?year=2019&month=4')
+    .then(function(response) {
+        this.calendar = response.data["calendar_days"];
+        this.monthName = response.data["month_name"];
+        this.year = response.data["year"];
+    }.bind(this));
   },
   methods: {},
   computed: {}

@@ -84,14 +84,14 @@ var CalendarEventsEditPage = {
   template: "#calendar_events-edit-page",
   data: function() {
     return {
-      name: "",
-      eventDate: "",
-      eventTime: "",
-      location: "",
-      home: "",
-      category: "",
-      errors: []
-    };
+        name: "",
+        eventDate: "",
+        eventTime: "",
+        location: "",
+        home: "",
+        category: "",
+        errors: []
+      };
   },
   created: function() {
     axios
@@ -100,8 +100,8 @@ var CalendarEventsEditPage = {
         console.log(response.data);
         var calendar_event = response.data;
         this.name = calendar_event.name
-        this.date = calendar_event.event_date
-        this.time = calendar_event.event_time
+        this.eventDate = calendar_event.event_date
+        this.eventTime = calendar_event.event_time
         this.location = calendar_event.location
         this.home = calendar_event.home
         this.category = calendar_event.category
@@ -111,8 +111,8 @@ var CalendarEventsEditPage = {
     submit: function() {
       var params = {
         name: this.name,
-        event_date: this.date,
-        event_time: this.time,
+        event_date: this.eventDate,
+        event_time: this.eventTime,
         location: this.location,
         home: this.home,
         category: this.category

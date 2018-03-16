@@ -114,7 +114,7 @@ class CalendarEventsController < ApplicationController
                                         location: params[:location],
                                         home: params[:home],
                                         user_id: current_user.id,
-                                        category: params[:category],
+                                        category: params[:category]
                                         # user_location: current_user.location
                                         )
       

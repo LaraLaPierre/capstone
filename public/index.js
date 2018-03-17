@@ -1,3 +1,5 @@
+
+
 var CalendarEventsIndexPage = {
   template: "#calendar_events-index-page",
   data: function() {
@@ -71,7 +73,7 @@ var CalendarEventsShowPage = {
     };
   },
   created: function() {
-    axios.get("/calendar_events/" + this.$route.params.id)
+    axios.get("/calendar_events/" + "?date=" + app.selectedDate)
       .then(function(response) {
         this.calendar_event = response.data;
       }.bind(this));
@@ -237,6 +239,11 @@ var router = new VueRouter({
 var app = new Vue({
   el: "#vue-app",
   router: router,
+  data: {
+    // Data used by the date picker
+    mode: 'single',
+    selectedDate: null,
+  },
   created: function() {
     var jwt = localStorage.getItem("jwt");
     if (jwt) {

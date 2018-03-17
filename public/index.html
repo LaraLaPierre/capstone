@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://unpkg.com/v-calendar/lib/v-calendar.min.css'>
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/style-turquoise.css">
   <link rel="shortcut icon" href="fa fa-strikethrough" type="image/png">
@@ -18,6 +19,7 @@
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.js"></script>
+  <script src='https://unpkg.com/v-calendar'></script>
   <script src="index.js" defer></script>
 </head>
 <div>
@@ -39,12 +41,12 @@
               </nav>
         </div>
          <!-- ======== END NAV BAR ============ -->
-     <div>
+<div>
        
              <router-view></router-view>
      </div>
 
-
+    
 
        <!-- ======== BEGIN PARALLAX SECTION ============ -->
           <section class="parallax-container white-text">
@@ -54,9 +56,13 @@
                     <div class="row">
                       <div class="col-md-8 mx-auto text-center"  style="height:500px;">
                         <div class="center-vertical">
-                                  <div class="center-vertical-box">
-                                      <h2>Dayly</h2>
-                                      <p>Your day, at a glance.</p><br>
+                            <div class="center-vertical-box">
+                                <h2>Dayly</h2>
+                                  <p>Your day, at a glance.</p><br>
+                                    <div id='vue-app'>
+                                      <v-calendar></v-calendar>
+                                      <v-date-picker :mode='mode' v-model='selectedDate'></v-date-picker>
+                                    </div>
                                       <!-- <a class="btn" href="#" data-toggle="modal" data-target="#product-modal"><b>$5</b> Buy now</a> -->
                               </div>
                             </div>
@@ -131,6 +137,7 @@
 </body>
 
 </html>
+
 
 <template id="calendar_events-index-page">
   <div class="vue-component">

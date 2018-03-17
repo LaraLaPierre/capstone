@@ -10,45 +10,22 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/style-turquoise.css">
-	<link rel="shortcut icon" href="fa fa-strikethrough" type="image/png">
-	<link rel="apple-touch-icon" href="img/ico/60.png" type="image/png">
-	<link rel="apple-touch-icon" sizes="72x72" href="img/ico/72.png" type="image/png">
-	<link rel="apple-touch-icon" sizes="120x120" href="img/ico/120.png" type="image/png">
-	<link rel="apple-touch-icon" sizes="152x152" href="img/ico/152.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+  <link rel="shortcut icon" href="fa fa-strikethrough" type="image/png">
+  <link rel="apple-touch-icon" href="img/ico/60.png" type="image/png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/ico/72.png" type="image/png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/ico/120.png" type="image/png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/ico/152.png" type="image/png">
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.js"></script>
   <script src="index.js" defer></script>
-  <style>
-    td {
-      font-size: 32px;
-      font-weight: bold;
-      color: black;
-      /*border: solid 2px black;*/
-      padding: 48px;
-      margin: 32px;
-    
-      border-radius: 100%;
-    }
-
-    .red {
-      background-color: #6EE3CF;
-    }
-
-    h1 {
-      font-family: 'Noto Serif', serif;
-      text-align: : right;
-
-    }
-  </style>
 </head>
 <div>
   <body id="home">
     <div id="vue-app">
-    	<a id="menu-link" href="#" class="">
-    		<span class="menu-icon"></span>
-    	</a>
+      <a id="menu-link" href="#" class="">
+        <span class="menu-icon"></span>
+      </a>
 
             <!-- ======== BEGIN NAV BAR ============ -->
         <div class="overlay" id="overlay">
@@ -62,30 +39,12 @@
               </nav>
         </div>
          <!-- ======== END NAV BAR ============ -->
-     
- <!-- ======== BEGIN TURQUOISE SECTION ============ -->
-           <section id="hero" class="m-center text-center bg-shop">
-            <div class="center-box">
-              
-                <div class="hero-unit ">
-                  <div class="container ">
-                  <h1 class="title"><b>Dayly</b></h1>
-                  <h3><b>Your day - at a glance.</b></h3> 
-                  
-                  <a class="btn white" data-toggle="modal" data-target="#signup-modal"><b>Sign Up</b></a>
-                  </div>
-                </div>
-                <div class="col-sm-12 img-hero"></div>
-              
-              <a href="#start" class="hero-start-link smooth-scroll anchor-link"><i class="fa fa-angle-double-down"></i></a>
-            </div>
-           </section>
-          <!-- ======== END TURQUOISE SECTION ============ -->
-
      <div>
        
              <router-view></router-view>
-     </div
+     </div>
+
+
 
        <!-- ======== BEGIN PARALLAX SECTION ============ -->
           <section class="parallax-container white-text">
@@ -108,10 +67,27 @@
           </section>
         <!-- ======== END PARALLAX SECTION ============ -->
 
-         
+          <!-- ======== BEGIN TURQUOISE SECTION ============ -->
+           <section id="hero" class="m-center text-center bg-shop">
+            <div class="center-box">
+              
+                <div class="hero-unit ">
+                  <div class="container ">
+                  <h1 class="title"><b>Dayly</b></h1>
+                  <h3><b>Your day - at a glance.</b></h3> 
+                  
+                  <a class="btn white" data-toggle="modal" data-target="#signup-modal"><b>Sign Up</b></a>
+                  </div>
+                </div>
+                <div class="col-sm-12 img-hero"></div>
+              
+              <a href="#start" class="hero-start-link smooth-scroll anchor-link"><i class="fa fa-angle-double-down"></i></a>
+            </div>
+           </section>
+          <!-- ======== END TURQUOISE SECTION ============ -->
 
           
-      >
+      
 
 
         <!-- ======== BEGIN FOOTER ============ -->
@@ -119,40 +95,44 @@
                 <div class="container-fluid">
                     <a href="#home" class="back-to-top smooth-scroll"><i class="fa fa-chevron-up"></i></a>
                     <p>Made with <i class="fa fa-heart color-text"></i> by Lara</a>.</p>
-                	<ul class="social-links-2 ">
-    					       <li><a href="https://twitter.com/landoflars"><i class="fa fa-twitter"></i></a></li>
-    				         <li><a href="https://medium.com/@larastheme"><i class="fa fa-medium"></i></a></li>
-    					       <li><a href="www.linkedin.com/in/laralapierre401"><i class="fa fa-linkedin"></i></a></li>
-    				      </ul>
+                  <ul class="social-links-2 ">
+                     <li><a href="https://twitter.com/landoflars"><i class="fa fa-twitter"></i></a></li>
+                     <li><a href="https://medium.com/@larastheme"><i class="fa fa-medium"></i></a></li>
+                     <li><a href="www.linkedin.com/in/laralapierre401"><i class="fa fa-linkedin"></i></a></li>
+                  </ul>
                 </div>
             </div>
         <!-- ======== END FOOTER ============ -->
 
 
-    <div>   
+    </div>
+        
+
+
+   
         <!-- Core scrips -->
       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
       <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
       <script type="text/javascript" src="js/core.js"></script>
       <script type="text/javascript" src="js/menu-overlay.js"></script>
       <script type="text/javascript" src="js/placeholders.min.js"></script>
       <!-- end core scripts --> 
       <!-- sliders -->
-      <script type="text/javascript" src="js/owl.carousel.min.js"></script>   	
-     	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.waitforimages/2.4.0/jquery.waitforimages.min.js"></script> 
-     	<script type="text/javascript" src="js/sliders.js"></script>
-    	<script type="text/javascript" src="js/jquery.counterup.min.js"></script>
-    	<script type="text/javascript" src="js/numbers.js"></script>
-    	<script type="text/javascript" src="js/contact.js"></script>
-    	<script type="text/javascript" src="js/parallax.js"></script>
+      <script type="text/javascript" src="js/owl.carousel.min.js"></script>     
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.waitforimages/2.4.0/jquery.waitforimages.min.js"></script> 
+      <script type="text/javascript" src="js/sliders.js"></script>
+      <script type="text/javascript" src="js/jquery.counterup.min.js"></script>
+      <script type="text/javascript" src="js/numbers.js"></script>
+      <script type="text/javascript" src="js/contact.js"></script>
+      <script type="text/javascript" src="js/parallax.js"></script>
 
-    </div>
+</div>
 </body>
 
 </html>
 
-<!-- <template id="calendar_events-index-page">
+<template id="calendar_events-index-page">
   <div class="vue-component">
     <div class="container">
       <div class="row">
@@ -170,20 +150,6 @@
         </div>
       </div>
     </div>
-  </div>
-</template> -->
-
-
-
-<template id="calendar_events-index-page">
-  <div class="vue-component">
-    <h1> {{ monthName }} {{year}}</h1>
-      <table>
-       <tr v-for="week in calendar"><td v-for="day in week" v-bind:class="{red: day['events'] ? day['events'][0] : false}">{{ day["value"] }}</td></tr>
-
-      </table>
-   
-
   </div>
 </template>
 
@@ -251,15 +217,15 @@
       </div>
       <div class="form-group">
         <label>Date:</label>
-        <input type="number" class="form-control" v-model="eventDate">
+        <input type="text" class="form-control" v-model="eventDate">
       </div>
       <div class="form-group">
-        <label>Time:</label>
-        <input type="text" v-model="eventTime" placeholder={{calendar_event.event_time}}>
+        <label>Time:</label> 
+        <input type="text" class="form-control" v-model="eventTime">
       </div>
       <div class="form-group">
-        <label>Location:</label>
-        <input type="text" v-model="location" placeholder={{calendar_event.location}}>
+        <label>Location:</label> 
+        <input type="text" class="form-control" v-model="location">
       </div>
       <div class="form-group">
         <label>Home Event?</label>
@@ -326,4 +292,3 @@
 
   </div>
 </template>
-

@@ -61,7 +61,7 @@ class CalendarEventsController < ApplicationController
   def turn_on
     response = Unirest.put(
                           "https://api.wink.com/light_bulbs/3432100/desired_state",
-                            headers: {"Authorization": "Bearer #{params[:access_token]}", "Content-Type": "application/json"},
+                            headers: {"Authorization": "Bearer #{ENV['WINK_ACCESS_TOKEN']}", "Content-Type": "application/json"},
                             parameters: {"desired_state": {"powered": true}}
                           )
     json_data = response.body 
@@ -73,79 +73,29 @@ class CalendarEventsController < ApplicationController
                 desired_state: json_data["data"]
                  }
   end
-  
 
   def index 
-    # @calendar_events = CalendarEvent.all
-    month_input = params[:month] || 3
-    year_input = params[:year] || 2018
+    @calendar_events = CalendarEvent.all
 
-    weeks = [['', '', '', '', '', '', '',],
-             ['', '', '', '', '', '', '',], 
-             ['', '', '', '', '', '', '',], 
-             ['', '', '', '', '', '', '',], 
-             ['', '', '', '', '', '', '',]
-            ]
-
-    current_month_first = Time.new(year_input.to_i, month_input.to_i, 01)
-    day_bookmark = current_month_first.wday
-
-    @month = current_month_first.strftime("%B")
-    @year = current_month_first.strftime("%Y")
-    day_of_month = 1
-     
-    (weeks[0].length - day_bookmark).times do 
-      day_hash = {"value" => '',"events" => []}
-
-      day_hash["value"] = day_of_month
-      day_hash["events"] = CalendarEvent.all.select {|event_obj| event_obj.event_date.day == day_of_month }
-    
-
-      weeks[0][day_bookmark] = day_hash
-
-      day_bookmark += 1
-      day_of_month += 1 
+    search_term = params[:name]
+    if search_term
     end 
 
-      week_index = 1
-      4.times do 
-        7.times do |day_index|
-          if day_of_month <= days_in_month(current_month_first.month, current_month_first.year)
-            day_hash = {"value" => '',"events" => []}
+    search_date = params[:date]
+    if search_date
+      @calendar_events = @calendar_events.where("event_date = ?", search_date)
+    end 
 
-            day_hash["value"] = day_of_month
-            day_hash["events"] = CalendarEvent.all.select {|event_obj| event_obj.event_date.day == day_of_month }
-            
-            weeks[week_index][day_index] = day_hash
+    search_location = params[:location]
+    if search_location
+      @calendar_events = @calendar_events.where("location = ?", search_location)
+    end 
 
-            day_of_month += 1 
-          end 
-        end 
-       week_index += 1
-      end
-
-    @weeks = weeks
+    search_month = params[:month]
     
-
-    # search_term = params[:name]
-    # if search_term
-    # end 
-
-    # search_date = params[:date]
-    # if search_date
-    #   @calendar_events = @calendar_events.where("event_date = ?", search_date)
-    # end 
-
-    # search_location = params[:location]
-    # if search_location
-    #   @calendar_events = @calendar_events.where("location = ?", search_location)
-    # end 
-
-    # search_month = params[:month]
-    
-    # if search_month
-    #  @calendar_events = @calendar_events.where('extract(month from event_date) = ? AND extract(year from event_date) = ?', search_month, 2018)
-    # end 
+    if search_month
+     @calendar_events = @calendar_events.where('extract(month from event_date) = ? AND extract(year from event_date) = ?', search_month, 2018)
+    end 
 
     render 'index.json.jbuilder'
   end
@@ -194,15 +144,6 @@ class CalendarEventsController < ApplicationController
       calendar_event = CalendarEvent.find(params[:id])
       calendar_event.destroy
       render json: {message: "Successfully destroyed calendar_event ##{calendar_event.id}"}
-  end
-
-  private
-
-  COMMON_YEAR_DAYS_IN_MONTH = [nil, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-
-  def days_in_month(month, year = Time.now.year)
-    return 29 if month == 2 && Date.gregorian_leap?(year)
-   COMMON_YEAR_DAYS_IN_MONTH[month]
   end
 
 end

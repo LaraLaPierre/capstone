@@ -1,5 +1,5 @@
 class CalendarEventsController < ApplicationController
-  def authorize
+  def authorize 
     render json: {
                   message: "visit this url",
                   url: "https://api.wink.com/oauth2/authorize?client_id=#{ENV['WINK_CLIENT_ID']}&redirect_uri=http://localhost:3000/wink/callback"
@@ -119,6 +119,12 @@ class CalendarEventsController < ApplicationController
       end
   end
 
+
+  def date 
+    @calendar_event = CalendarEvent.find(params[:event_date])
+    render 'show.json.jbuilder'
+
+  end 
   def show
     @calendar_event = CalendarEvent.find(params[:id])
 

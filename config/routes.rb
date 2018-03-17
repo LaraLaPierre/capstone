@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   post 'user_token' => 'user_token#create'
   get '/calendar_events' => 'calendar_events#index'
+  get '/calendar_events/:event_date' => 'calendar_events#date'
+
   post '/calendar_events' => 'calendar_events#create'
   # get '/calendar_events/search' => 'calendar_events#search'
   get '/calendar_events/:id' => 'calendar_events#show'

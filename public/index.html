@@ -41,7 +41,7 @@
               </nav>
         </div>
          <!-- ======== END NAV BAR ============ -->
-<div>
+      <div>
        
              <router-view></router-view>
      </div>
@@ -59,10 +59,7 @@
                             <div class="center-vertical-box">
                                 <h2>Dayly</h2>
                                   <p>Your day, at a glance.</p><br>
-                                    <div id='vue-app'>
-                                      <v-calendar></v-calendar>
-                                      <v-date-picker :mode='mode' v-model='selectedDate'></v-date-picker>
-                                    </div>
+                                    
                                       <!-- <a class="btn" href="#" data-toggle="modal" data-target="#product-modal"><b>$5</b> Buy now</a> -->
                               </div>
                             </div>
@@ -152,9 +149,15 @@
               <p class="card-text">Where: {{ calendar_event.location }}</p>
               <p class="card-text">{{ calendar_event.forecast }}</p>
               <a v-bind:href="'/#/calendar_events/' + calendar_event.id" class="btn btn-primary float-right">More Info</a>
+              
             </div>
           </div>
         </div>
+        <div id='vue-app'>
+                <v-calendar></v-calendar>
+                <v-date-picker :mode='mode' v-model='selectedDate' v-on:click="showEvent(selectedDate)">
+                </v-date-picker>
+              </div>
       </div>
     </div>
   </div>

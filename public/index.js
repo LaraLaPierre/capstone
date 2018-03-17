@@ -1,10 +1,10 @@
-
-
 var CalendarEventsIndexPage = {
   template: "#calendar_events-index-page",
   data: function() {
     return {
-      calendar_events: []
+      calendar_events: [],
+      mode: 'single',
+      selectedDate: new Date()
     };
   },
   created: function() {
@@ -13,9 +13,16 @@ var CalendarEventsIndexPage = {
         this.calendar_events = response.data;
       }.bind(this));
   },
-  methods: {},
+  methods: {
+    showEvent: function() {
+      console.log(this.selectedDate);
+      console.log(selectedDate);
+    }
+  },
+
   computed: {}
 };
+
 
 var CalendarEventsNewPage = {
   template: "#calendar_events-new-page",
@@ -73,7 +80,7 @@ var CalendarEventsShowPage = {
     };
   },
   created: function() {
-    axios.get("/calendar_events/" + "?date=" + app.selectedDate)
+    axios.delete("/calendar_events/" + this.$route.params.id)
       .then(function(response) {
         this.calendar_event = response.data;
       }.bind(this));

@@ -21,6 +21,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'knock'
 gem 'figaro'
 gem 'seed_dump'
+gem 'rufus-scheduler'
 
 gem 'unirest'
 

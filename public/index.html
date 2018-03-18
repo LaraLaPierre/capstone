@@ -154,8 +154,9 @@
           </div>
         </div>
         <div id='vue-app'>
-                <v-calendar></v-calendar>
-                <v-date-picker :mode='mode' v-model='selectedDate'>
+                <v-calendar :attributes='attrs'>
+                </v-calendar>
+                <v-date-picker :mode='mode' v-model='selectedDate' :attributes='attrs' >
                 </v-date-picker>
               </div>
       </div>

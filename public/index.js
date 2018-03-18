@@ -4,13 +4,35 @@ var CalendarEventsIndexPage = {
     return {
       calendar_events: [],
       mode: 'single',
-      selectedDate: new Date()
+      selectedDate: new Date(),
+      attrs: [
+        {
+          key: 'calDays',
+          dot: {
+            backgroundColor: '#ff8080',
+            // Other properties are available too, like `height` & `borderRadius`
+          },
+          dates: []
+        },
+        {
+          key: 'today',
+          highlight: {
+            backgroundColor: '#6ee3cf',
+            // Other properties are available too, like `height` & `borderRadius`
+          },
+          dates: new Date()
+        },
+      ],
     };
   },
   created: function() {
     axios.get("/calendar_events")
       .then(function(response) {
         this.calendar_events = response.data;
+        for (var x of response.data) {
+          var date = new Date(x.event_date)
+          this.attrs[0].dates.push(date) 
+        }
       }.bind(this));
   },
   methods: {

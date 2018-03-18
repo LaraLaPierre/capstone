@@ -119,12 +119,6 @@ class CalendarEventsController < ApplicationController
       end
   end
 
-
-  def date 
-    @calendar_event = CalendarEvent.find(params[:event_date])
-    render 'show.json.jbuilder'
-
-  end 
   def show
     @calendar_event = CalendarEvent.find(params[:id])
 

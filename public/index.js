@@ -14,9 +14,11 @@ var CalendarEventsIndexPage = {
       }.bind(this));
   },
   methods: {
-    showEvent: function() {
-      console.log(this.selectedDate);
-      console.log(selectedDate);
+    matchDate: function(calendar_event) {
+      var isoDate = this.selectedDate.toISOString();
+      var isoDate = isoDate.split("T", 1)
+      var isoDate = isoDate[0]
+      return calendar_event.event_date === isoDate
     }
   },
 
@@ -80,7 +82,7 @@ var CalendarEventsShowPage = {
     };
   },
   created: function() {
-    axios.delete("/calendar_events/" + this.$route.params.id)
+    axios.get("/calendar_events/" + this.$route.params.id)
       .then(function(response) {
         this.calendar_event = response.data;
       }.bind(this));

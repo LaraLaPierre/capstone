@@ -33,10 +33,10 @@
         <div class="overlay" id="overlay">
               <nav class="overlay-menu">
                 <ul>
-                  <li><a href="/#/" class="smooth-scroll">Your Calendar</a></li>
-                  <li><a href="/#/calendar_events/new" class="smooth-scroll">Weather</a></li>
-                  <li><a href="/#/login" class="smooth-scroll">News</a></li>
-                  <li><a href="/#/logout" class="smooth-scroll">Devices</a></li>
+                  <li><a href="/#/" class="smooth-scroll">Home</a></li>
+                  <li><a href="/#/calendar_events/new" class="smooth-scroll">Add Event</a></li>
+                  <li><a href="/#/login" class="smooth-scroll">Login</a></li>
+                  <li><a href="/#/logout" class="smooth-scroll">Logout</a></li>
                 </ul>
               </nav>
         </div>
@@ -140,22 +140,22 @@
   <div class="vue-component">
     <div class="container">
       <div class="row">
-        <div v-for="calendar_event in calendar_events" class="col-md-4">
+        <div v-for="calendar_event in calendar_events" v-if="matchDate(calendar_event)" class="col-md-4">
           <div class="card mb-5">
             <div class="card-body">
               <h2 class="card-name">{{ calendar_event.name }}</h2>
               <p class="card-text"> {{ calendar_event.pretty_event_date }}</p>
               <p class="card-text"> {{ calendar_event.pretty_event_time }}</p>
-              <p class="card-text">Where: {{ calendar_event.location }}</p>
-              <p class="card-text">{{ calendar_event.forecast }}</p>
-              <a v-bind:href="'/#/calendar_events/' + calendar_event.id" class="btn btn-primary float-right">More Info</a>
+              <!-- <p class="card-text">Where: {{ calendar_event.location }}</p>
+              <p class="card-text">{{ calendar_event.forecast }}</p> -->
+              <a class="btn btn-primary float-right" v-bind:href="'/#/calendar_events/' + calendar_event.id">More Info</a>
               
             </div>
           </div>
         </div>
         <div id='vue-app'>
                 <v-calendar></v-calendar>
-                <v-date-picker :mode='mode' v-model='selectedDate' v-on:click="showEvent(selectedDate)">
+                <v-date-picker :mode='mode' v-model='selectedDate'>
                 </v-date-picker>
               </div>
       </div>
@@ -188,7 +188,7 @@
       </div>
       <div class="form-group">
         <label>Category:</label>
-        <input type="integer" class="form-control" v-model="location">
+        <input type="integer" class="form-control" v-model="category">
       </div>
       <div class="form-group">
         <label>Is this event at Home? T/F:</label>
@@ -202,13 +202,19 @@
 <template id="calendar_event-show-page">
   <div class="vue-component">
     <div class="container">
-      <h1>{{ calendar_event.name }}</h1>
-      <h3>{{ calendar_event.pretty_event_date }}</h3>
-      <h3>{{ calendar_event.pretty_event_time }}</h3>
-      <h3>{{ calendar_event.location }}</h3>
-      <h3>{{ calendar_event.forecast }}</h3>
-      <a class="btn btn-warning" v-bind:href="'/#/calendar_events/' + calendar_event.id + '/edit'">Edit</a>
-      <a class="btn btn-warning" v-bind:href="'/#/calendar_events/' + calendar_event.id + '/delete'">Delete</a>
+      <div class="row">
+        <div class="card mb-5">
+            <div class="card-body">
+              <h2 class="card-name">{{ calendar_event.name }}</h2>
+              <p class="card-text"> {{ calendar_event.pretty_event_date }}</p>
+              <p class="card-text"> {{ calendar_event.pretty_event_time }}</p>
+              <p class="card-text"> {{ calendar_event.location }}</p>
+              <p class="card-text"> {{ calendar_event.forecast }}</p>
+        <a class="btn btn-warning" v-bind:href="'/#/calendar_events/' + calendar_event.id + '/edit'">Edit</a>
+        <a class="btn btn-warning" v-bind:href="'/#/calendar_events/' + calendar_event.id + '/delete'">Delete</a>
+        <a class="btn btn-warning" v-bind:href="'/#/calendar_events/'">Back</a>
+
+      </div>
     </div>
   </div>
 </template>

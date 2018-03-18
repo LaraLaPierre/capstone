@@ -3,6 +3,7 @@ var CalendarEventsIndexPage = {
   data: function() {
     return {
       calendar_events: [],
+      paneWidth: 1024,
       mode: 'single',
       selectedDate: new Date(),
       attrs: [

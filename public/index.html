@@ -146,19 +146,17 @@
               <h2 class="card-name">{{ calendar_event.name }}</h2>
               <p class="card-text"> {{ calendar_event.pretty_event_date }}</p>
               <p class="card-text"> {{ calendar_event.pretty_event_time }}</p>
-              <!-- <p class="card-text">Where: {{ calendar_event.location }}</p>
-              <p class="card-text">{{ calendar_event.forecast }}</p> -->
               <a class="btn btn-primary float-right" v-bind:href="'/#/calendar_events/' + calendar_event.id">More Info</a>
               
             </div>
           </div>
         </div>
         <div id='vue-app'>
-                <v-calendar :attributes='attrs' :pane-width=paneWidth>
-                </v-calendar>
-                <v-date-picker :mode='mode' v-model='selectedDate' :attributes='attrs' >
-                </v-date-picker>
-              </div>
+            <v-calendar :attributes='attrs' :pane-width=paneWidth> 
+            </v-calendar>
+            <v-date-picker :mode='mode' :attributes='attrs' v-model='selectedDate'>
+            </v-date-picker>
+        </div>
       </div>
     </div>
   </div>

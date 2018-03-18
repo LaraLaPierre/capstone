@@ -13,7 +13,7 @@ var CalendarEventsIndexPage = {
             backgroundColor: '#ff8080',
             // Other properties are available too, like `height` & `borderRadius`
           },
-          dates: []
+          dates: ['2018/03/02']
         },
         {
           key: 'today',
@@ -30,9 +30,14 @@ var CalendarEventsIndexPage = {
     axios.get("/calendar_events")
       .then(function(response) {
         this.calendar_events = response.data;
+        console.log(response.data)
         for (var x of response.data) {
-          var date = new Date(x.event_date)
-          this.attrs[0].dates.push(date) 
+          var events = x.event_date
+          console.log(events)
+          var events = events.replace("-", "/");
+          console.log(events)
+          var events = events.replace("-", "/");
+          this.attrs[0].dates.push(events) 
         }
       }.bind(this));
   },
@@ -41,6 +46,7 @@ var CalendarEventsIndexPage = {
       var isoDate = this.selectedDate.toISOString();
       var isoDate = isoDate.split("T", 1)
       var isoDate = isoDate[0]
+  
       return calendar_event.event_date === isoDate
     }
   },

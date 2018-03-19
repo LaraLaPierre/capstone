@@ -41,26 +41,27 @@
               </nav>
         </div>
          <!-- ======== END NAV BAR ============ -->
-      <div>
-       
-             <router-view></router-view>
-     </div>
+      
 
     
 
        <!-- ======== BEGIN PARALLAX SECTION ============ -->
           <section class="parallax-container white-text">
-            <div class="dark-overlay"></div>
+            
             <div class="parallax"><img src="img/sunset.jpg" alt="About the creator"></div>
                 <div class="container">
                     <div class="row">
-                      <div class="col-md-8 mx-auto text-center"  style="height:500px;">
+                      <div class="col-md-6 mx-auto text-center"  style="height:600px;">
                         <div class="center-vertical">
                             <div class="center-vertical-box">
-                                <h2>Dayly</h2>
-                                  <p>Your day, at a glance.</p><br>
+                                <!-- <h2>Dayly</h2>
+                                  <p>Your day, at a glance.</p><br> -->
                                     
                                       <!-- <a class="btn" href="#" data-toggle="modal" data-target="#product-modal"><b>$5</b> Buy now</a> -->
+                                  <div class='calendar'>
+       
+                                         <router-view></router-view>
+                                 </div>
                               </div>
                             </div>
                           </div>
@@ -71,7 +72,7 @@
         <!-- ======== END PARALLAX SECTION ============ -->
 
           <!-- ======== BEGIN TURQUOISE SECTION ============ -->
-           <section id="hero" class="m-center text-center bg-shop">
+           <!-- <section id="hero" class="m-center text-center bg-shop">
             <div class="center-box">
               
                 <div class="hero-unit ">
@@ -86,7 +87,7 @@
               
               <a href="#start" class="hero-start-link smooth-scroll anchor-link"><i class="fa fa-angle-double-down"></i></a>
             </div>
-           </section>
+           </section> -->
           <!-- ======== END TURQUOISE SECTION ============ -->
 
           
@@ -96,7 +97,7 @@
         <!-- ======== BEGIN FOOTER ============ -->
             <div class="footer-1 text-center">
                 <div class="container-fluid">
-                    <a href="#home" class="back-to-top smooth-scroll"><i class="fa fa-chevron-up"></i></a>
+                    
                     <p>Made with <i class="fa fa-heart color-text"></i> by Lara</a>.</p>
                   <ul class="social-links-2 ">
                      <li><a href="https://twitter.com/landoflars"><i class="fa fa-twitter"></i></a></li>
@@ -146,19 +147,19 @@
               <h2 class="card-name">{{ calendar_event.name }}</h2>
               <p class="card-text"> {{ calendar_event.pretty_event_date }}</p>
               <p class="card-text"> {{ calendar_event.pretty_event_time }}</p>
-              <a class="btn btn-primary float-right" v-bind:href="'/#/calendar_events/' + calendar_event.id">More Info</a>
+              <a class="btn btn-primary float-center" v-bind:href="'/#/calendar_events/' + calendar_event.id">More Info</a>
               
             </div>
           </div>
         </div>
-        <div id='vue-app'>
+      </div>
+    </div>
+        <div class='calendar' id='vue-app'>
             <v-calendar :attributes='attrs' :pane-width=paneWidth> 
             </v-calendar>
             <v-date-picker :mode='mode' :attributes='attrs' v-model='selectedDate'>
             </v-date-picker>
         </div>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -217,6 +218,8 @@
     </div>
   </div>
 </template>
+
+
 
 <template id="calendar_events-edit-page">
   <div class="vue-component">

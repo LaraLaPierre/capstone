@@ -1,4 +1,5 @@
 class CalendarEventsController < ApplicationController
+
   def authorize 
     render json: {
                   message: "visit this url",
@@ -77,6 +78,9 @@ class CalendarEventsController < ApplicationController
   def index 
     @calendar_events = CalendarEvent.all
 
+    
+
+    
     search_term = params[:name]
     if search_term
     end 
@@ -97,7 +101,10 @@ class CalendarEventsController < ApplicationController
      @calendar_events = @calendar_events.where('extract(month from event_date) = ? AND extract(year from event_date) = ?', search_month, 2018)
     end 
 
+    @user = current_user
     render 'index.json.jbuilder'
+
+
   end
 
   def create 

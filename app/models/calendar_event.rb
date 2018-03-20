@@ -2,7 +2,6 @@ class CalendarEvent < ApplicationRecord
   belongs_to :user 
   enum status: {entertaining: 1, relaxing: 2, learning: 3}
 
-
   def pretty_event_time
     event_time.strftime('%e:%M %p ')
   end
@@ -30,4 +29,5 @@ class CalendarEvent < ApplicationRecord
 
     forecast_for_event
   end
+
 end

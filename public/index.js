@@ -2,6 +2,7 @@ var CalendarEventsIndexPage = {
   template: "#calendar_events-index-page",
   data: function() {
     return {
+      daily_weather: "",
       calendar_events: [],
       paneWidth: 1024,
       mode: 'single',
@@ -30,16 +31,19 @@ var CalendarEventsIndexPage = {
     axios.get("/calendar_events")
       .then(function(response) {
         this.calendar_events = response.data;
-        console.log(response.data)
         for (var x of response.data) {
           var events = x.event_date
-          console.log(events)
           var events = events.replace("-", "/");
-          console.log(events)
           var events = events.replace("-", "/");
           this.attrs[0].dates.push(events) 
         }
-      }.bind(this));
+      }.bind(this)
+    );
+
+    axios.get("/users")
+      .then(function(response) {
+        this.daily_weather = response.data.weather
+        }.bind(this));
   },
   methods: {
     matchDate: function(calendar_event) {
@@ -48,6 +52,10 @@ var CalendarEventsIndexPage = {
       var isoDate = isoDate[0]
   
       return calendar_event.event_date === isoDate
+    },
+
+    closeCard: function(calendar_event) {
+      console.log(calendar_event.target);
     }
   },
 

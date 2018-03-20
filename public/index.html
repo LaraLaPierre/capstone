@@ -16,6 +16,7 @@
   <link rel="apple-touch-icon" sizes="72x72" href="img/ico/72.png" type="image/png">
   <link rel="apple-touch-icon" sizes="120x120" href="img/ico/120.png" type="image/png">
   <link rel="apple-touch-icon" sizes="152x152" href="img/ico/152.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i" rel="stylesheet">
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.js"></script>
@@ -42,7 +43,7 @@
         </div>
          <!-- ======== END NAV BAR ============ -->
       
-
+    
     
 
        <!-- ======== BEGIN PARALLAX SECTION ============ -->
@@ -59,7 +60,7 @@
                                     
                                       <!-- <a class="btn" href="#" data-toggle="modal" data-target="#product-modal"><b>$5</b> Buy now</a> -->
                                   <div class='calendar'>
-       
+                                   
                                          <router-view></router-view>
                                  </div>
                               </div>
@@ -140,6 +141,7 @@
 <template id="calendar_events-index-page">
   <div class="vue-component">
     <div class="container">
+      <h4> {{ daily_weather }}</h4>
       <div class="row">
         <div v-for="calendar_event in calendar_events" v-if="matchDate(calendar_event)" class="col-md-4">
           <div class="card mb-5">
@@ -155,6 +157,7 @@
       </div>
     </div>
         <div class='calendar' id='vue-app'>
+          
             <v-calendar :attributes='attrs' :pane-width=paneWidth> 
             </v-calendar>
             <v-date-picker :mode='mode' :attributes='attrs' v-model='selectedDate'>

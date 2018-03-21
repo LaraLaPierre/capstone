@@ -16,7 +16,7 @@
   <link rel="apple-touch-icon" sizes="72x72" href="img/ico/72.png" type="image/png">
   <link rel="apple-touch-icon" sizes="120x120" href="img/ico/120.png" type="image/png">
   <link rel="apple-touch-icon" sizes="152x152" href="img/ico/152.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700" rel="stylesheet">
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.js"></script>
@@ -143,19 +143,29 @@
     <div class="container">
       <h4> {{ daily_weather }}</h4>
       <div class="row">
-        <div v-for="calendar_event in calendar_events" v-if="matchDate(calendar_event)" class="col-md-4">
-          <div class="card mb-5">
-            <div class="card-body">
-              <h2 class="card-name">{{ calendar_event.name }}</h2>
-              <p class="card-text"> {{ calendar_event.pretty_event_date }}</p>
-              <p class="card-text"> {{ calendar_event.pretty_event_time }}</p>
-              <a class="btn btn-primary float-center" v-bind:href="'/#/calendar_events/' + calendar_event.id">More Info</a>
-              
+          <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="card-body">
+                   <div class="card bg-light mb-5">
+                      <h5 class="card-name">Today's Calendar Events</h5>
+                   </div>
+                </div>
+              <div v-for="calendar_event in calendar_events" v-if="matchDate(calendar_event)" class="col-md-4">
+              <div class="carousel-item">
+                <div class="card mb-5">
+                  <div class="card-body">
+                    <h2 class="card-name">{{ calendar_event.name }}</h2>
+                    <p class="card-text"> {{ calendar_event.pretty_event_date }}</p>
+                    <p class="card-text"> {{ calendar_event.pretty_event_time }}</p>
+                    <a class="btn btn-primary float-center" v-bind:href="'/#/calendar_events/' + calendar_event.id">More Info</a>
+    
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
       </div>
-    </div>
         <div class='calendar' id='vue-app'>
           
             <v-calendar :attributes='attrs' :pane-width=paneWidth> 
@@ -221,8 +231,6 @@
     </div>
   </div>
 </template>
-
-
 
 <template id="calendar_events-edit-page">
   <div class="vue-component">

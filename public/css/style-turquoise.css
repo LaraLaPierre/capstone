@@ -43,6 +43,19 @@ font-size: 35px;
   color: #000;
 
 }
+
+#forecast {
+  width: 400px;
+  word-wrap: break-word;
+  text-align: center;
+}
+
+#editPage {
+  color: #F8F9F9;
+  font-size: 25px;
+
+}
+
 hr {
   border-top: 1px solid #b6b6b6;
 }

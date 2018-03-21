@@ -52,7 +52,7 @@
             <div class="parallax"><img src="img/sunset.jpg" alt="About the creator"></div>
                 <div class="container">
                     <div class="row">
-                      <div class="col-md-6 mx-auto text-center"  style="height:600px;">
+                      <div class="col-md-11 mx-auto text-center"  style="height:600px;">
                         <div class="center-vertical">
                             <div class="center-vertical-box">
                                 <!-- <h2>Dayly</h2>
@@ -212,7 +212,7 @@
               <p class="card-text"> {{ calendar_event.pretty_event_date }}</p>
               <p class="card-text"> {{ calendar_event.pretty_event_time }}</p>
               <p class="card-text"> {{ calendar_event.location }}</p>
-              <p class="card-text"> {{ calendar_event.forecast }}</p>
+              <p class="card-text" id="forecast"> {{ calendar_event.forecast }}</p>
         <a class="btn btn-warning" v-bind:href="'/#/calendar_events/' + calendar_event.id + '/edit'">Edit</a>
         <a class="btn btn-warning" v-bind:href="'/#/calendar_events/' + calendar_event.id + '/delete'">Delete</a>
         <a class="btn btn-warning" v-bind:href="'/#/calendar_events/'">Back</a>
@@ -227,7 +227,7 @@
 <template id="calendar_events-edit-page">
   <div class="vue-component">
 
-    <div class="container">
+    <div class="container" id="editPage">
       <h1>Edit an Event</h1>
       <ul>
         <li class="text-danger" v-for="error in errors">{{ error }}</li>
@@ -249,8 +249,8 @@
         <input type="text" class="form-control" v-model="location">
       </div>
       <div class="form-group">
-        <label>Home Event?</label>
-        <input type="text" class="form-control" v-model="home ">
+        <label>Is this event at home?:</label> 
+        <input type="text" class="form-control" v-model="home">
       </div>
       <div class="form-group">
         <label>Category</label>

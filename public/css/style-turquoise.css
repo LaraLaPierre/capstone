@@ -5,9 +5,9 @@ html * {
 }
 html,
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
   font-weight: 400;
-  color: #202020;
+  color: #F8F9F9;
   font-size: 16px;
   position: relative;
   right: 0;
@@ -32,12 +32,24 @@ b,
 strong {
   font-weight: 600;
 }
+h1{
+  font-size: 45px;
+}
 
 h4 {
-font-family: 'Bitter', serif;
-font-style: italic;
-font-size: 35px;
+font-family: 'Yanone Kaffeesatz', sans-serif;
+/*font-style: italic;*/
+font-size: 45px;
+color: #F8F9F9;
 
+}
+
+.card-name {
+  font-size: 45px;
+}
+
+.card-text {
+  font-size: 20px;
 }
 .calendar {
   color: #000;
@@ -48,12 +60,16 @@ font-size: 35px;
   width: 400px;
   word-wrap: break-word;
   text-align: center;
+
 }
 
 #editPage {
   color: #F8F9F9;
   font-size: 25px;
+}
 
+label {
+  font-size: 30px;
 }
 
 hr {

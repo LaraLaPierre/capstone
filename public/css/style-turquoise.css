@@ -5,9 +5,9 @@ html * {
 }
 html,
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
   font-weight: 400;
-  color: #202020;
+  color: #F8F9F9;
   font-size: 16px;
   position: relative;
   right: 0;
@@ -32,6 +32,9 @@ b,
 strong {
   font-weight: 600;
 }
+h1{
+  font-size: 45px;
+}
 
 h4 {
 font-family: 'Yanone Kaffeesatz', sans-serif;
@@ -42,6 +45,16 @@ color: #F8F9F9;
 
 .card-body{
   font-family: 'Yanone Kaffeesatz', sans-serif;
+font-size: 45px;
+color: #F8F9F9;
+
+}
+
+.card-name {
+  font-size: 45px;
+}
+
+.card-text {
   font-size: 20px;
 }
 
@@ -54,6 +67,23 @@ color: #F8F9F9;
   width: 75%;
   margin: auto;
 }
+
+#forecast {
+  width: 400px;
+  word-wrap: break-word;
+  text-align: center;
+
+}
+
+#editPage {
+  color: #F8F9F9;
+  font-size: 25px;
+}
+
+label {
+  font-size: 30px;
+}
+
 hr {
   border-top: 1px solid #b6b6b6;
 }

@@ -13,7 +13,7 @@ class User < ApplicationRecord
     daily_temp = weather_response.body["query"]["results"]["channel"]["item"]["condition"]["temp"]
     daily_cond = weather_response.body["query"]["results"]["channel"]["item"]["condition"]["text"]
 
-    daily_weather = "The current weather in Chicago, IL is #{daily_temp}F and #{daily_cond}."
+    daily_weather = "The current weather for Chicago, IL is #{daily_temp}F and #{daily_cond}."
 
     return daily_weather
   end 

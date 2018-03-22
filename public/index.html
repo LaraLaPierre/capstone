@@ -140,22 +140,64 @@
 
 <template id="calendar_events-index-page">
   <div class="vue-component">
+
+
     <div class="container">
-      <h4> {{ daily_weather }}</h4>
-      <div class="row">
-        <div v-for="calendar_event in calendar_events" v-if="matchDate(calendar_event)" class="col-md-4">
-          <div class="card mb-5">
-            <div class="card-body">
-              <h2 class="card-name">{{ calendar_event.name }}</h2>
-              <p class="card-text"> {{ calendar_event.pretty_event_date }}</p>
-              <p class="card-text"> {{ calendar_event.pretty_event_time }}</p>
-              <a class="btn btn-primary float-center" v-bind:href="'/#/calendar_events/' + calendar_event.id">More Info</a>
-              
+     <!--  <h4> {{ daily_weather }}</h4> -->
+
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+
+
+
+          <div class="carousel-inner" role="listbox">
+
+
+            <div class="carousel-item active"> 
+              <div class="card mb-5 carousel-card">
+                  <div class="card-body">
+                    <h2 class="card-name">{{ daily_weather }}</h2>
+                  </div>
+               </div>   
             </div>
+
+            <div v-for="calendar_event in calendar_events" v-if="matchDate(calendar_event)" class="carousel-item">
+                <div class="card mb-5 carousel-card">
+                  <div class="card-body">
+                    <h2 class="card-name">{{ calendar_event.name }}</h2>
+                    <p class="card-text"> {{ calendar_event.pretty_event_date }}</p>
+                    <p class="card-text"> {{ calendar_event.pretty_event_time }}</p>
+                    <a class="btn btn-primary float-center" v-bind:href="'/#/calendar_events/' + calendar_event.id">More Info</a>
+                    
+                  </div>
+                </div>
+            </div>
+
+
           </div>
+
+
+
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
-      </div>
+
+
+
     </div>
+
+
         <div class='calendar' id='vue-app'>
           
             <v-calendar :attributes='attrs' :pane-width=paneWidth> 
@@ -165,6 +207,8 @@
         </div>
   </div>
 </template>
+
+
 
 <template id="calendar_events-new-page">
   <div class="vue-component">
@@ -221,8 +265,6 @@
     </div>
   </div>
 </template>
-
-
 
 <template id="calendar_events-edit-page">
   <div class="vue-component">

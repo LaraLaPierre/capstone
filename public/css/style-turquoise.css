@@ -39,6 +39,12 @@ h1{
 h4 {
 font-family: 'Yanone Kaffeesatz', sans-serif;
 /*font-style: italic;*/
+font-size: 35px;
+color: #F8F9F9;
+}
+
+.card-body{
+  font-family: 'Yanone Kaffeesatz', sans-serif;
 font-size: 45px;
 color: #F8F9F9;
 
@@ -51,9 +57,15 @@ color: #F8F9F9;
 .card-text {
   font-size: 20px;
 }
+
 .calendar {
   color: #000;
+}
 
+.carousel-card {
+  height: 230px;
+  width: 75%;
+  margin: auto;
 }
 
 #forecast {

@@ -42,21 +42,18 @@ var CalendarEventsIndexPage = {
 
     axios.get("/users")
       .then(function(response) {
-        this.daily_weather = response.data.weather
+        this.daily_weather = response.data.weather;
         }.bind(this));
   },
   methods: {
     matchDate: function(calendar_event) {
       var isoDate = this.selectedDate.toISOString();
-      var isoDate = isoDate.split("T", 1)
-      var isoDate = isoDate[0]
+      var isoDate = isoDate.split("T", 1);
+      var isoDate = isoDate[0];
   
-      return calendar_event.event_date === isoDate
-    },
-
-    closeCard: function(calendar_event) {
-      console.log(calendar_event.target);
+      return calendar_event.event_date === isoDate;
     }
+
   },
 
   computed: {}

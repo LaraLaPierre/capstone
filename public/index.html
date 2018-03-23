@@ -142,7 +142,7 @@
   <div class="vue-component">
 
 
-    <div class="container">
+    <div class="container" id="indexPage">
      <!--  <h4> {{ daily_weather }}</h4> -->
 
 
@@ -159,15 +159,16 @@
 
 
             <div class="carousel-item active"> 
-              <div class="card mb-5 carousel-card">
+              <div class="card mb-5 carousel-card" id="firstCarouselCard">
                   <div class="card-body">
-                    <h2 class="card-name">{{ daily_weather }}</h2>
+                    <h5 class="card-name">Dayly</h5>
+                    <h3 class="card-text">{{ daily_weather }}</h3>
                   </div>
                </div>   
             </div>
 
             <div v-for="calendar_event in calendar_events" v-if="matchDate(calendar_event)" class="carousel-item">
-                <div class="card mb-5 carousel-card">
+                <div class="card mb-5 carousel-card" id="carouselCard">
                   <div class="card-body">
                     <h2 class="card-name">{{ calendar_event.name }}</h2>
                     <p class="card-text"> {{ calendar_event.pretty_event_date }}</p>
@@ -212,33 +213,33 @@
 
 <template id="calendar_events-new-page">
   <div class="vue-component">
-    <div class="container">
+    <div class="container" id=newPage>
       <h1>Add an Event</h1>
       <ul>
         <li class="text-danger" v-for="error in errors">{{ error }}</li>
       </ul>
-      <div class="form-group">
+      <div class="form-inline">
         <label>Name:</label> 
         <input type="text" class="form-control" v-model="name">
       </div>
-      <div class="form-group">
+      <div class="form-inline">
         <label>Date:</label>
         <input type="text" class="form-control" v-model="eventDate">
       </div>
-      <div class="form-group">
+      <div class="form-inline">
         <label>Time</label>
         <input type="text" class="form-control" v-model="eventTime">
       </div>
-      <div class="form-group">
+      <div class="form-inline">
         <label>Location:</label>
         <input type="text" class="form-control" v-model="location">
       </div>
-      <div class="form-group">
+      <div class="form-inline">
         <label>Category:</label>
         <input type="integer" class="form-control" v-model="category">
       </div>
-      <div class="form-group">
-        <label>Is this event at Home? T/F:</label>
+      <div class="form-inline">
+        <label>Home Event? T/F:</label>
         <input type="boolean" class="form-control" v-model="home">
       </div>
       <button class="btn btn-primary" v-on:click="submit()">Submit</button>
@@ -248,9 +249,9 @@
 
 <template id="calendar_event-show-page">
   <div class="vue-component">
-    <div class="container">
-      <div class="row">
-        <div class="card mb-5">
+    <div id="showPage" class="container">
+      <div class="row" >
+        <div class="card mb-5" id="showCard">
             <div class="card-body">
               <h2 class="card-name">{{ calendar_event.name }}</h2>
               <p class="card-text"> {{ calendar_event.pretty_event_date }}</p>
@@ -268,63 +269,61 @@
 
 <template id="calendar_events-edit-page">
   <div class="vue-component">
-
-    <div class="container" id="editPage">
-      <h1>Edit an Event</h1>
-      <ul>
-        <li class="text-danger" v-for="error in errors">{{ error }}</li>
-      </ul>
-      <div class="form-group">
-        <label>Name:</label> 
-        <input type="text" class="form-control" v-model="name">
+      <div class="col-md-12" id="editPage">
+        <ul>
+          <li class="text-danger" v-for="error in errors">{{ error }}</li>
+        </ul>
+        <div class="form-inline">
+          <label>Name: </label>
+          <input type="text" class="form-control" v-model="name">
+        </div> 
+        <div class="form-inline">
+          <label>Date: </label>
+          <input type="text" class="form-control" v-model="eventDate">
+        </div>
+        <div class="form-inline">
+          <label>Time: </label> 
+          <input type="text" class="form-control" v-model="eventTime">
+        </div>
+        <div class="form-inline">
+          <label>Location: </label> 
+          <input type="text" class="form-control" v-model="location">
+        </div>
+        <div class="form-inline">
+          <label>Home Event:</label> 
+          <input type="text" class="form-control" v-model="home">
+        </div>
+        <div class="form-inline">
+          <label>Category: </label>
+          <input type="text" class="form-control" v-model="category">
+        </div>
+        <button class="btn btn-primary" v-on:click="submit()">Submit</button>
       </div>
-      <div class="form-group">
-        <label>Date:</label>
-        <input type="text" class="form-control" v-model="eventDate">
-      </div>
-      <div class="form-group">
-        <label>Time:</label> 
-        <input type="text" class="form-control" v-model="eventTime">
-      </div>
-      <div class="form-group">
-        <label>Location:</label> 
-        <input type="text" class="form-control" v-model="location">
-      </div>
-      <div class="form-group">
-        <label>Is this event at home?:</label> 
-        <input type="text" class="form-control" v-model="home">
-      </div>
-      <div class="form-group">
-        <label>Category</label>
-        <input type="text" class="form-control" v-model="category">
-      </div>
-      <button class="btn btn-primary" v-on:click="submit()">Submit</button>
-    </div>
-
+  
   </div>
 </template>
 
 <template id="signup-page">
   <div class="vue-component">
 
-    <div class="container">
+    <div class="container" id="signupPage">
       <h1>Signup</h1>
       <ul>
         <li class="text-danger" v-for="error in errors">{{ error }}</li>
       </ul>
-      <div class="form-group">
+      <div class="form-inline">
         <label>Name:</label> 
         <input type="text" class="form-control" v-model="name">
       </div>
-      <div class="form-group">
+      <div class="form-inline">
         <label>Email:</label>
         <input type="email" class="form-control" v-model="email">
       </div>
-      <div class="form-group">
+      <div class="form-inline">
         <label>Password:</label>
         <input type="password" class="form-control" v-model="password">
       </div>
-      <div class="form-group">
+      <div class="form-inline">
         <label>Password confirmation:</label>
         <input type="password" class="form-control" v-model="passwordConfirmation">
       </div>
@@ -337,16 +336,15 @@
 <template id="login-page">
   <div class="vue-component">
 
-    <div class="container">
-      <h1>Login</h1>
+    <div class="container" id="loginPage">
       <ul>
         <li class="text-danger" v-for="error in errors">{{ error }}</li>
       </ul>
-      <div class="form-group">
+      <div class="form-inline">
         <label>Email:</label>
         <input type="email" class="form-control" v-model="email">
       </div>
-      <div class="form-group">
+      <div class="form-inline">
         <label>Password:</label>
         <input type="password" class="form-control" v-model="password">
       </div>

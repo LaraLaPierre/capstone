@@ -39,14 +39,14 @@ h1{
 h4 {
 font-family: 'Yanone Kaffeesatz', sans-serif;
 /*font-style: italic;*/
-font-size: 35px;
-color: #F8F9F9;
+font-size: 45px;
+color: #000;
 }
 
 .card-body{
   font-family: 'Yanone Kaffeesatz', sans-serif;
 font-size: 45px;
-color: #F8F9F9;
+color: #000;
 
 }
 
@@ -60,6 +60,11 @@ color: #F8F9F9;
 
 .calendar {
   color: #000;
+
+}
+
+.label {
+  font-size: 40px
 }
 
 .carousel-card {
@@ -75,13 +80,108 @@ color: #F8F9F9;
 
 }
 
+#indexPage .c-pane.is-single {
+  border-radius: 25px;
+  background-color: #ede2de
+}
+  
+#indexPage #firstCarouselCard {
+  border-radius: 25px;
+  background-color: #ede2de
+}
+
+#indexPage #carouselCard {
+  border-radius: 25px;
+  background-color: #ede2de
+}
+
+#indexPage .card-name {
+  text-align: center;
+  padding: 15px;
+}
+
+
+#indexPage h3 {
+  font-size: 30px;
+}
+#indexPage h5 {
+  font-size: 50px;
+}
+
+.center-vertical-box #editPage{
+  width: 900px;
+}
+
+#showPage #showCard {
+  border-radius: 25px;
+  background-color: #ede2de;
+  font-size: 30px;
+}
+#newPage h1 {
+ color: #ede2de;
+}
+#newPage .container {
+  margin: auto;
+}
+
+#newPage {
+  color: #F8F9F9;
+  font-size: 25px;
+  width: 100%;
+}
+
+#newPage .form-control{
+  font-size: 25px;
+  background-color: #ede2de;
+
+}
+#newPage .form-inline {
+  padding: 3px;
+  color: #ede2de;
+}
+#newPage label {
+  font-size: 40px;
+  padding: 10px;
+}
+
 #editPage {
   color: #F8F9F9;
   font-size: 25px;
+  width: 100%;
 }
 
-label {
-  font-size: 30px;
+#editPage .form-control{
+  font-size: 25px;
+  background-color: #ede2de;
+
+}
+#editPage .form-inline {
+  padding: 3px;
+  color: #ede2de;
+}
+#editPage label {
+  font-size: 40px;
+  padding: 10px;
+}
+
+#loginPage {
+  color: #F8F9F9;
+  font-size: 25px;
+  width: 100%;
+}
+
+#loginPage .form-control{
+  font-size: 25px;
+  background-color: #ede2de;
+
+}
+#loginPage .form-inline {
+  padding: 3px;
+  color: #ede2de;
+}
+#loginPage label {
+  font-size: 40px;
+  padding: 10px;
 }
 
 hr {

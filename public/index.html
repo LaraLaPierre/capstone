@@ -201,9 +201,9 @@
 
         <div class='calendar' id='vue-app'>
           
-            <v-calendar :attributes='attrs' :pane-width=paneWidth> 
+            <v-calendar :attributes='attrs' :pane-width=paneWidth :theme-styles='themeStyles'> 
             </v-calendar>
-            <v-date-picker :mode='mode' :attributes='attrs' v-model='selectedDate'>
+            <v-date-picker :mode='mode' :attributes='attrs' v-model='selectedDate' :theme-styles='themeStyles'>
             </v-date-picker>
         </div>
   </div>

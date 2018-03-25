@@ -6,12 +6,37 @@ var CalendarEventsIndexPage = {
       calendar_events: [],
       paneWidth: 1024,
       mode: 'single',
+      themeStyles: {
+        wrapper: {
+          background: 'linear-gradient(to bottom right, #ede2de, #4b62b7)',
+          color: '#fafafa',
+          border: '0',
+          borderRadius: '5px',
+          boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.14), 0 6px 20px 0 rgba(0, 0, 0, 0.13)'
+        },
+        dayCellNotInMonth: {
+          opacity: .1,
+        },
+        header: {
+          color: '#000066', // New color
+          fontWeight: '800', // And bolder font weight
+        },
+        
+        weekdays: {
+          color: '#000066', // New color
+          fontWeight: '800', // And bolder font weight
+        },
+        weeks: {
+          color: '#000066', // New color
+          fontWeight: '800', // And bolder font weight
+        }
+      },
       selectedDate: new Date(),
       attrs: [
         {
           key: 'calDays',
           dot: {
-            backgroundColor: '#ff8080',
+            backgroundColor: '#6ee3cf',
             // Other properties are available too, like `height` & `borderRadius`
           },
           dates: ['2018/03/02']

@@ -55,7 +55,7 @@ color: #000066;
 }
 
 .card-text {
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .calendar {
@@ -81,14 +81,14 @@ color: #000066;
 }
 
 #indexPage .c-pane.is-single {
-  border-radius: 25px;
+  border-radius: 15px;
   background-color: #8D97C4
 }
   
 #indexPage #firstCarouselCard {
   color: #000066;
   text-shadow: 2px 2px 4px #ede2de;
-  border-radius: 25px;
+  border-radius: 15px;
   background-color: #8D97C4;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -96,7 +96,7 @@ color: #000066;
 #indexPage #carouselCard {
   color: #000066;
   text-shadow: 2px 2px 4px #ede2de;
-  border-radius: 25px;
+  border-radius: 15px;
   background-color: #8D97C4
 }
 
@@ -120,7 +120,7 @@ color: #000066;
 #showPage #showCard {
   color: #000066;
   text-shadow: 2px 2px 4px #ede2de;
-  border-radius: 25px;
+  border-radius: 15px;
   background-color: #8D97C4;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -164,13 +164,18 @@ color: #000066;
 
 }
 #editPage .form-inline {
-  padding: 3px;
+  text-align: center;
+  padding: 3px, 50px, 3px, 50px;
   color: #000066;
   text-shadow: 2px 2px 4px #ede2de;
 }
 #editPage label {
   font-size: 40px;
   padding: 10px;
+}
+
+#editPage .col-md-12 {
+  padding: 20px;
 }
 
 #loginPage {
@@ -181,12 +186,13 @@ color: #000066;
 
 #loginPage .form-control{
   font-size: 25px;
-  background-color: #ede2de;
+  background-color: #8D97C4;
 
 }
 #loginPage .form-inline {
   padding: 3px;
-  color: #ede2de;
+  color: #000066;
+  text-shadow: 2px 2px 4px #ede2de;
 }
 #loginPage label {
   font-size: 40px;

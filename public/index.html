@@ -214,7 +214,7 @@
 <template id="calendar_events-new-page">
   <div class="vue-component">
     <div class="container" id=newPage>
-      <h1>Add an Event</h1>
+    
       <ul>
         <li class="text-danger" v-for="error in errors">{{ error }}</li>
       </ul>
@@ -242,7 +242,7 @@
         <label>Home Event? T/F:</label>
         <input type="boolean" class="form-control" v-model="home">
       </div>
-      <button class="btn btn-primary" v-on:click="submit()">Submit</button>
+      <button class="btn btn-primary" v-on:click="submit()">Add Event</button>
     </div>
   </div>
 </template>

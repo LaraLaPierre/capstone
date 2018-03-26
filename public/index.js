@@ -62,7 +62,7 @@ var CalendarEventsIndexPage = {
           var events = events.replace("-", "/");
           this.attrs[0].dates.push(events) 
         }
-      }.bind(this)
+      }.bind(this)  
     );
 
     axios.get("/users")
@@ -170,8 +170,8 @@ var CalendarEventsEditPage = {
         console.log(response.data);
         var calendar_event = response.data;
         this.name = calendar_event.name
-        this.eventDate = calendar_event.event_date
-        this.eventTime = calendar_event.event_time
+        this.eventDate = calendar_event.pretty_event_date
+        this.eventTime = calendar_event.pretty_event_time
         this.location = calendar_event.location
         this.home = calendar_event.home
         this.category = calendar_event.category

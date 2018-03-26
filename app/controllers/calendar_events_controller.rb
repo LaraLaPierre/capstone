@@ -76,9 +76,7 @@ class CalendarEventsController < ApplicationController
   end
 
   def index 
-    @calendar_events = CalendarEvent.all
-
-    
+    @calendar_events = CalendarEvent.all.order('event_time::time')
 
     
     search_term = params[:name]

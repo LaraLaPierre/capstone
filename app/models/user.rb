@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_secure_password
+  has_secure_password 
   has_many :calendar_events
   has_many :categories, through: :calendar_events
   has_one :light

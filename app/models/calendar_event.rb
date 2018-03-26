@@ -3,11 +3,11 @@ class CalendarEvent < ApplicationRecord
   enum status: {entertaining: 1, relaxing: 2, learning: 3}
 
   def pretty_event_time
-    event_time.strftime('%e:%M %p ')
+    event_time.strftime("%l:%M %p ")
   end
 
   def pretty_event_date
-    event_date.strftime("%A, %B %e, %Y ")
+    event_date.strftime("%A, %B %e, %Y ") 
   end
 
   def forecast    

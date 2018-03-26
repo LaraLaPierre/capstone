@@ -10,5 +10,5 @@ json.pretty_event_date calendar_event.pretty_event_date
 json.forecast calendar_event.forecast
 json.category calendar_event.category
 json.home calendar_event.home
-json.weather @user.weather 
+# json.weather @user.weather 
 

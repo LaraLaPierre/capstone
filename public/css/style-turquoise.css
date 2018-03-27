@@ -45,8 +45,8 @@ color: #000066;
 
 .card-body{
   font-family: 'Yanone Kaffeesatz', sans-serif;
-font-size: 45px;
-color: #000066;
+  font-size: 45px;
+  color: #000066;
 
 }
 
@@ -128,29 +128,35 @@ color: #000066;
  color: #ede2de;
 }
 #newPage .container {
-  margin: auto;
 }
 
 #newPage {
   color: #F8F9F9;
   font-size: 25px;
   width: 100%;
+  background-color: rgba(142, 151, 193, 0.85);
+  border-radius: 6px;
 }
 
 #newPage .form-control{
   font-size: 25px;
-  background-color: #8D97C4;
+  background-color: #F4D48E;
+  padding: 0px 150px;
 
 }
 #newPage .form-inline {
+  margin: auto;
   padding: 3px;
   color: #000066;
   text-shadow: 2px 2px 4px #ede2de;
 }
 #newPage label {
+  margin: auto 0px auto auto;
   font-size: 40px;
   padding: 10px;
 }
+
+
 
 #editPage {
   color: #F8F9F9;
@@ -465,7 +471,7 @@ section {
 }
 .myform .form-control:focus {
   outline: none;
-  border: 2px solid #2fe6ce;
+  /*border: 2px solid #2fe6ce*/;
 }
 .myform .controls {
   position: relative;

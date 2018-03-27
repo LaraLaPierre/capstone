@@ -26,9 +26,9 @@ scheduler.every("30s") do
         if event["category"] == 1
           brightness = 1.0
         elsif event["category"] == 2
-          brightness == 0.1
+          brightness = 0.1
         elsif event["category"] == 3
-          brightness == 0.6
+          brightness = 0.6
         end 
 
         response = Unirest.put(

@@ -134,13 +134,13 @@ color: #000066;
   color: #F8F9F9;
   font-size: 25px;
   width: 100%;
-  background-color: rgba(142, 151, 193, 0.85);
+  background-color: rgba(142, 151, 193, 0.8);
   border-radius: 6px;
 }
 
 #newPage .form-control{
   font-size: 25px;
-  background-color: #F4D48E;
+  background-color: #ede2de;
   padding: 0px 150px;
 
 }
@@ -156,51 +156,54 @@ color: #000066;
   padding: 10px;
 }
 
-
-
 #editPage {
   color: #F8F9F9;
   font-size: 25px;
   width: 100%;
+  background-color: rgba(142, 151, 193, 0.8);
+  border-radius: 6px;
 }
 
 #editPage .form-control{
   font-size: 25px;
-  background-color: #8D97C4;
+  background-color: #ede2de;
+  padding: 0px 150px;
 
 }
 #editPage .form-inline {
-  text-align: center;
-  padding: 3px, 50px, 3px, 50px;
+  margin: auto;
+  padding: 3px;
   color: #000066;
   text-shadow: 2px 2px 4px #ede2de;
 }
 #editPage label {
+  margin: auto 0px auto auto;
   font-size: 40px;
   padding: 10px;
-}
-
-#editPage .col-md-12 {
-  padding: 20px;
 }
 
 #loginPage {
   color: #F8F9F9;
   font-size: 25px;
   width: 100%;
+  background-color: rgba(142, 151, 193, 0.8);
+  border-radius: 6px;
 }
 
 #loginPage .form-control{
   font-size: 25px;
-  background-color: #8D97C4;
+  background-color: #ede2de;
+  padding: 0px 150px;
 
 }
 #loginPage .form-inline {
+  margin: auto;
   padding: 3px;
   color: #000066;
   text-shadow: 2px 2px 4px #ede2de;
 }
 #loginPage label {
+  margin: auto 0px auto auto;
   font-size: 40px;
   padding: 10px;
 }

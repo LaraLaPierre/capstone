@@ -8,9 +8,7 @@ scheduler = Rufus::Scheduler.new
 scheduler.every("30s") do  
 
   response = Unirest.get("http://localhost:3000/calendar_events")
-  puts "*" * 50
-  puts response.body
-  puts "*" * 50
+  
   response.body.each do |event|
     if Date.parse(event["event_date"]) == Date.today
       time = Time.now
